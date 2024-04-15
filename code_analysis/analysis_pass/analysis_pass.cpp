@@ -11,7 +11,7 @@ using namespace llvm;
 
 namespace {
 
-struct Pass : public PassInfoMixin<Pass> {
+struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
 
   PreservedAnalyses run(Function &F, FunctionAnalysisManager &FAM) {
     // These variables contain the results of some analysis passes.
@@ -109,13 +109,13 @@ struct Pass : public PassInfoMixin<Pass> {
 
 extern "C" ::llvm::PassPluginLibraryInfo LLVM_ATTRIBUTE_WEAK llvmGetPassPluginInfo() {
   return {
-    LLVM_PLUGIN_API_VERSION, "Pass", "v0.1",
+    LLVM_PLUGIN_API_VERSION, "AnalysisPass", "v0.1",
     [](PassBuilder &PB) {
       PB.registerPipelineParsingCallback(
         [](StringRef Name, FunctionPassManager &FPM,
         ArrayRef<PassBuilder::PipelineElement>) {
           if(Name == "analysis"){
-            FPM.addPass(Pass());
+            FPM.addPass(AnalysisPass());
             return true;
           }
           return false;
