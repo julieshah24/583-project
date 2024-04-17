@@ -13,6 +13,17 @@ namespace {
 
 struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
 
+  bool isMemoryAccess(unsigned opcode) {
+    return opcode == Instruction::Alloca || opcode == Instruction::Load || opcode == Instruction::Store
+            || opcode == Instruction::GetElementPtr || opcode == Instruction::Fence
+            || opcode == Instruction::AtomicCmpXchg || opcode == Instruction::AtomicRMW;
+  }
+
+  bool isBranch(unsigned opcode) {
+    return opcode == Instruction::Br || opcode == Instruction::Switch || opcode == Instruction::IndirectBr;
+  }
+  
+
   PreservedAnalyses run(Function &F, FunctionAnalysisManager &FAM) {
     auto &bfi = FAM.getResult<BlockFrequencyAnalysis>(F);
     auto &LI = FAM.getResult<LoopAnalysis>(F);
@@ -28,6 +39,45 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       //     blockIDs[&BB] = id++;
       // }
       //errs() << "going through function";
+
+      // prints frequency of functions
+      BasicBlock *functionEntry = (*func_iter)->getEntryBlock();
+      uint64_t functionFrequency = bfi.getBlockFreq(functionEntry).getFrequency();
+
+      errs() << "FuncID: " << functionEntry << " ";
+      errs() << "Executions: " << functionFrequency << "\n";
+
+      for(const BasicBlock &BB: F) {
+        // get the frequence of individual basic blocks
+        std::optional< uint64_t > blockFrequencyOp = bfi.getBlockProfileCount(&BB);
+        uint64_t blockFrequency = blockFrequencyOp.value_or(0);
+        errs() << "BlockID: " << &BB << " ";
+        errs() << "Executions: " << blockFrequency << " ";
+
+        // std::vector<Instruction*> branchInstructions;
+        uint64_t numMemoryAccess = 0; // memory accesses in a basic block? --> not sure if there is a diff profile metric we want for this
+        uint64_t numBiasedBranches = 0;
+        uint64_t numUnbiasedBranches = 0;
+        for (const Instruction &I : BB) {
+          unsigned opcode = I.getOpcode();
+          if (isMemoryAccess(opcode)) { numMemoryAccess += 1; }
+
+          // record which instructions are branches 
+          if (isBranch(opcode)) {
+            // branchInstructions.push_back(&I);  
+            bool isBiasedBranch = false; 
+            for(int i = 0; i < I.getNumSuccessors(); i++) {
+              BranchProbability brPr = bpi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
+              if(brPr >= BranchProbability(90, 100)) { isBiasedBranch = true; }
+            }         
+            if(isBiasedBranch) { numBiasedBranches += 1; }
+            else { numUnbiasedBranches += 1;}
+          }
+        }
+        errs() << "Memory Accesses: " << numMemoryAccess << " ";
+        errs() << "Biased Branches: " << numBiasedBranches << " ";
+        errs() << "Unbiased Branches: " << numUnbiasedBranches << "\n";
+      }
 
         // use &li to iterate through the loops
         // this way, we don't have to iterate through each basic block and figure out which one has loop
