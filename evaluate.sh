@@ -5,10 +5,10 @@
 # where <benchmark_name> = simple OR anagram OR compress
 
 # ACTION REQUIRED: Ensure that the path to the library and pass name are correct.
-PATH2LIB="../build/analysis_pass/AnalysisPass.so"
+PATH2LIB="./code_analysis/build/analysis_pass/AnalysisPass.so"
 PASS=analysis
 
-BENCH=src/${1}.c
+BENCH=code_analysis/dataset/src/${1}.c
 
 # Delete outputs from previous runs. Update this if you want to retain some files across runs.
 rm -f default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll *.in *.in.Z
@@ -16,10 +16,10 @@ rm -f default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll *.in *.in.Z
 # Creates a link to the input file in the local directory.
 # Not adding this can sometimes alter results.
 if [ "${1}" = "anagram" ]; then 
-ln -sf input/input.in
-ln -sf input/words
+ln -sf code_analysis/dataset/input/input.in
+ln -sf code_analysis/dataset/input/words
 elif [ "${1}" = "compress" ];then
-ln -sf input/compress.in 
+ln -sf code_analysis/dataset/input/compress.in 
 fi
 
 # Convert source code to bitcode (IR).
