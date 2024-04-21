@@ -55,3 +55,5 @@ opt --disable-output -load-pass-plugin="${PATH2LIB}" -passes="${PASS}" ${1}.prof
 
 # Cleanup: Remove this if you want to retain the created files.
 rm -f *.in *.in.Z default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll words
+
+mv model/prompts/prompt1.txt model/prompts/${1}.txt
