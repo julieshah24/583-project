@@ -33,6 +33,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
     //errs() << "Hello!";
 
     // for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
+    // for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
 
       // numbering basic blocks, not really helpful
       // std::unordered_map<BasicBlock*, unsigned> blockIDs;
@@ -69,7 +70,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             // branchInstructions.push_back(&I);  
             bool isBiasedBranch = false; 
             for(int i = 0; i < I.getNumSuccessors(); i++) {
-              BranchProbability brPr = bpi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
+              BranchProbability brPr = bfi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
               if(brPr >= BranchProbability(90, 100)) { isBiasedBranch = true; }
             }         
             if(isBiasedBranch) { numBiasedBranches += 1; }
