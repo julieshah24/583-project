@@ -2,10 +2,10 @@
 #                                                                 #
 # This script takes a prompt file and uses its contents to prompt #
 # the LLM LLAMA 3. The output produced by LLAMA 3 will then be    #
-# saved in the folder "./outputs/".                           #
+# saved in the folder "./outputs/".                               #
 #                                                                 #
 # To use follow the following input:                              #
-#     python query.py <file containing prompt>                    #
+#     python query.py <file containing prompt>.txt                #
 #                                                                 #
 ###################################################################
 import replicate
@@ -44,18 +44,17 @@ def query_llama(prompt):
     
     input = {'prompt': prompt, 'prompt_template': '<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'}
    
-    output = replicate.run('meta/meta-llama-3-70b-instruct',
+    output = replicate.run('meta/meta-llama-3-8b-instruct', # can replace 8 with 70
             input=input)
 
-    print("".join(output))
     return output
 
 # saves model output to a text file
-def save_model_output(output):
+def save_model_output(output, file_name):
     
     now = datetime.now()
     dt_str = now.strftime('%d%m%Y_%H%M%S')
-    file_path = './output/output_' + dt_str + '.txt'
+    file_path = './output/' + file_name 
     
     try:
         file = open(file_path, 'w')
@@ -87,6 +86,6 @@ else:
     prompt_str = get_prompt(sys.argv[1])
     if prompt_str != '':
         output = query_llama(prompt_str)
-        save_model_output("".join(output))
+        save_model_output("".join(output), sys.argv[1])
     else:
         print('Prompt was empty. LLAMA was not queried.\n')
