@@ -2,7 +2,7 @@
 #                                                                 #
 # This script takes a prompt file and uses its contents to prompt #
 # the LLM LLAMA 3. The output produced by LLAMA 3 will then be    #
-# saved in the folder "model/outputs/".                           #
+# saved in the folder "./outputs/".                           #
 #                                                                 #
 # To use follow the following input:                              #
 #     python query.py <file containing prompt>                    #
@@ -15,14 +15,14 @@ from datetime import datetime
 # reads prompt file given in arguments
 def get_prompt(file_name):
     
-    file_path = 'model/prompts/' + file_name
+    file_path = './prompts/' + file_name
     
     try:
         file = open(file_path, 'r')
     except:
         print('\nERROR WITH PROMPT FILE')
-        print('This script cannot find the prompt file "' + file_name + '" in "model/prompts/"')
-        print('Please make sure the prompt file is located in "model/prompts/"\n')
+        print('This script cannot find the prompt file "' + file_name + '" in "./prompts/"')
+        print('Please make sure the prompt file is located in "./prompts/"\n')
         return ''
 
     try:
@@ -55,7 +55,7 @@ def save_model_output(output):
     
     now = datetime.now()
     dt_str = now.strftime('%d%m%Y_%H%M%S')
-    file_path = 'model/output/output_' + dt_str + '.txt'
+    file_path = './output/output_' + dt_str + '.txt'
     
     try:
         file = open(file_path, 'w')
