@@ -30,7 +30,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
     auto &SE = FAM.getResult<ScalarEvolutionAnalysis>(F);
     //errs() << "Hello!";
 
-    for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
+    // for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
 
       // numbering basic blocks, not really helpful
       // std::unordered_map<BasicBlock*, unsigned> blockIDs;
@@ -41,7 +41,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       //errs() << "going through function";
 
       // prints frequency of functions
-      BasicBlock *functionEntry = (*func_iter)->getEntryBlock();
+      BasicBlock *functionEntry = F.getEntryBlock();
       uint64_t functionFrequency = bfi.getBlockFreq(functionEntry).getFrequency();
 
       errs() << "FuncID: " << functionEntry << " ";
@@ -67,7 +67,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             // branchInstructions.push_back(&I);  
             bool isBiasedBranch = false; 
             for(int i = 0; i < I.getNumSuccessors(); i++) {
-              BranchProbability brPr = bpi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
+              BranchProbability brPr = bfi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
               if(brPr >= BranchProbability(90, 100)) { isBiasedBranch = true; }
             }         
             if(isBiasedBranch) { numBiasedBranches += 1; }
@@ -125,8 +125,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             //   errs() << "Cycles: " << TotalCycles << "\n";
             // //}
           }
-    }
-
+  // }
     return PreservedAnalyses::all();
   }
 };
