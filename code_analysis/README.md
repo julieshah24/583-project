@@ -6,3 +6,8 @@ Initial Set-up:
 
 After making changes to AnalysisPass, cd to the build folder and run make
 to recompile the changes.
+
+To be able to run the model:
+in your terminal, run pip install replicate
+Go to https://replicate.com/account/api-tokens and get a token
+In your terminal, run export REPLICATE_API_TOKEN=<paste-your-token-here>
