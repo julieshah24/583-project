@@ -23,7 +23,10 @@ ln -sf code_analysis/dataset/input/compress.in
 fi
 
 mkdir model/prompts/program # To store stats for each function
-mkdir model/output 
+mkdir -p model/output
+mkdir -p model/prompts
+
+# TODO: Start evaluation loop here
 
 # Convert source code to bitcode (IR).
 clang -emit-llvm -c ${BENCH} -Xclang -disable-O0-optnone -o ${1}.bc -Wno-deprecated-non-prototype
