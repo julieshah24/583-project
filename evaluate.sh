@@ -15,11 +15,11 @@ rm -f default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll *.in *.in.Z
 
 # Creates a link to the input file in the local directory.
 # Not adding this can sometimes alter results.
-if [ "${1}" = "anagram" ]; then 
+if [ "${1}" = "anagram" ]; then
 ln -sf code_analysis/dataset/input/input.in
 ln -sf code_analysis/dataset/input/words
 elif [ "${1}" = "compress" ];then
-ln -sf code_analysis/dataset/input/compress.in 
+ln -sf code_analysis/dataset/input/compress.in
 fi
 
 # Convert source code to bitcode (IR).
@@ -32,10 +32,10 @@ opt -passes='pgo-instr-gen,instrprof' ${1}.bc -o ${1}.prof.bc
 clang -fprofile-instr-generate ${1}.prof.bc -o ${1}_prof
 
 # When we run the profiler embedded executable, it generates a default.profraw file that contains the profile data.
-if [ "${1}" = "anagram" ]; then 
+if [ "${1}" = "anagram" ]; then
 ./${1}_prof words < input.in > /dev/null 2>&1
 elif [ "${1}" = "compress" ];then
-./${1}_prof compress.in > /dev/null 
+./${1}_prof compress.in > /dev/null
 else
 ./${1}_prof > /dev/null
 fi
@@ -60,7 +60,10 @@ mv model/prompts/prompt1.txt model/prompts/${1}.txt # rename output file
 
 cd model && python3 query.py ${1}.txt # run model
 
-# TODO: get flags from output - only valid flags
+python3 parse_model_output.py ${1}.txt > final_flags.txt
+FLAGS=$(<final_flags.txt)
+echo $FLAGS
+rm -rf final_flags.txt
 
 # Get instruction counts
 echo "O2 baseline: "
@@ -69,6 +72,6 @@ llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\
 echo "O3 baseline: "
 clang -O3 -o out ../code_analysis/dataset/src/${1}.c
 llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
-# echo "Our flag suggestions: "
-# clang INSERT SUGGESTIONS -o out ../code_analysis/dataset/src/${1}.c
-# llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+echo "Our flag suggestions: "
+clang ${FLAGS} -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
