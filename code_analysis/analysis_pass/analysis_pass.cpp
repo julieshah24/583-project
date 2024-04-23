@@ -76,7 +76,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             // branchInstructions.push_back(&I);  
             bool isBiasedBranch = false; 
             for(int i = 0; i < I.getNumSuccessors(); i++) {
-              BranchProbability brPr = bfi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
+              BranchProbability brPr = bpi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
               if(brPr >= BranchProbability(90, 100)) { isBiasedBranch = true; }
             }         
             if(isBiasedBranch) { numBiasedBranches += 1; }
@@ -157,15 +157,23 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
     }
     else {
       //prints func_name: func_frequency, 
-      outFile << "The function named \"" << funcName << "\" executes ";
-      outFile << functionFrequency << " times. It has ";
-      outFile << numBBs << " basic blocks, where on average each basic block executes ";
+      errs() << (std::string)funcName;
+      outFile << "The function named \'";
+      outFile << (std::string)funcName;
+      outFile << "\' executes ";
+      outFile << functionFrequency;
+      outFile << " times. It has ";
+      outFile << numBBs;
+      outFile << " basic blocks, where on average each basic block executes ";
       double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
-      outFile << avgBBFrequency << " times, has ";
+      outFile << avgBBFrequency;
+      outFile << " times, has ";
       double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
-      outFile << avgBBMemAccess << " memory acceses, ";
+      outFile << avgBBMemAccess;
+      outFile << " memory acceses, ";
       double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
-      outFile << avgBBBiasedBranches << " biased branches, and ";
+      outFile << avgBBBiasedBranches;
+      outFile << " biased branches, and ";
       double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
       outFile << avgBBUnbiasedBranches << " unbiased branches. It has ";
       outFile << numLoops << " loops, where on average each loop executes ";
@@ -176,7 +184,7 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
       outFile << avgCyclesPerLoopIteration << " cycles per loop iteration.\n";
 
-      outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags and nothing else.";
+      outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags separated by whitespace and no other text.";
       // outFile << "Name exactly one llvm optimization compile flag and nothing else";
 
       // Close the file

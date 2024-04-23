@@ -5,7 +5,7 @@
 # saved in the folder "./outputs/".                               #
 #                                                                 #
 # To use follow the following input:                              #
-#     python query.py <file containing prompt>.txt                #
+#     python3 query.py <file containing prompt>.txt                #
 #                                                                 #
 ###################################################################
 import replicate

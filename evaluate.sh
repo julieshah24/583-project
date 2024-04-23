@@ -56,4 +56,19 @@ opt --disable-output -load-pass-plugin="${PATH2LIB}" -passes="${PASS}" ${1}.prof
 # Cleanup: Remove this if you want to retain the created files.
 rm -f *.in *.in.Z default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll words
 
-mv model/prompts/prompt1.txt model/prompts/${1}.txt
+mv model/prompts/prompt1.txt model/prompts/${1}.txt # rename output file
+
+cd model && python3 query.py ${1}.txt # run model
+
+# TODO: get flags from output - only valid flags
+
+# Get instruction counts
+echo "O2 baseline: "
+clang -O2 -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+echo "O3 baseline: "
+clang -O3 -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+# echo "Our flag suggestions: "
+# clang INSERT SUGGESTIONS -o out ../code_analysis/dataset/src/${1}.c
+# llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
