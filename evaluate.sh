@@ -15,12 +15,15 @@ rm -f default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll *.in *.in.Z
 
 # Creates a link to the input file in the local directory.
 # Not adding this can sometimes alter results.
-if [ "${1}" = "anagram" ]; then
+if [ "${1}" = "anagram" ]; then 
 ln -sf code_analysis/dataset/input/input.in
 ln -sf code_analysis/dataset/input/words
 elif [ "${1}" = "compress" ];then
-ln -sf code_analysis/dataset/input/compress.in
+ln -sf code_analysis/dataset/input/compress.in 
 fi
+
+mkdir model/prompts/program # To store stats for each function
+mkdir model/output 
 
 # Convert source code to bitcode (IR).
 clang -emit-llvm -c ${BENCH} -Xclang -disable-O0-optnone -o ${1}.bc -Wno-deprecated-non-prototype
@@ -32,10 +35,10 @@ opt -passes='pgo-instr-gen,instrprof' ${1}.bc -o ${1}.prof.bc
 clang -fprofile-instr-generate ${1}.prof.bc -o ${1}_prof
 
 # When we run the profiler embedded executable, it generates a default.profraw file that contains the profile data.
-if [ "${1}" = "anagram" ]; then
+if [ "${1}" = "anagram" ]; then 
 ./${1}_prof words < input.in > /dev/null 2>&1
 elif [ "${1}" = "compress" ];then
-./${1}_prof compress.in > /dev/null
+./${1}_prof compress.in > /dev/null 
 else
 ./${1}_prof > /dev/null
 fi
@@ -56,13 +59,18 @@ opt --disable-output -load-pass-plugin="${PATH2LIB}" -passes="${PASS}" ${1}.prof
 # Cleanup: Remove this if you want to retain the created files.
 rm -f *.in *.in.Z default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll words
 
-mv model/prompts/prompt1.txt model/prompts/${1}.txt # rename output file
+mv model/prompts/program model/prompts/${1} # rename output folder
+
+python3 create_prompt.py ${1} # generate prompt
+rm -rf model/prompts/${1}
+
 
 cd model && python3 query.py ${1}.txt # run model
 
-python3 parse_model_output.py ${1}.txt > final_flags.txt
-FLAGS=$(<final_flags.txt)
-echo $FLAGS
+python3 parse_query_output.py ${1}.txt > final_flags.txt
+# FLAGS=$(<final_flags.txt)
+FLAGS=$(cat final_flags.txt)
+echo "$FLAGS"
 rm -rf final_flags.txt
 
 # Get instruction counts

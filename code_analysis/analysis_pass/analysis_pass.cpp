@@ -149,46 +149,59 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       }
 
     // Open a file to write the prompt to with this profile data
-    std::ofstream outFile("./model/prompts/prompt1.txt");
+    std::ofstream outFile("./model/prompts/program/" + (std::string)funcName + ".txt");
 
     // Check if the file was opened successfully
     if (!outFile) {
         errs() << "Error: Unable to open file for writing\n";
     }
     else {
-      //prints func_name: func_frequency, 
-      errs() << (std::string)funcName;
-      outFile << "The function named \'";
-      outFile << (std::string)funcName;
-      outFile << "\' executes ";
-      outFile << functionFrequency;
-      outFile << " times. It has ";
-      outFile << numBBs;
-      outFile << " basic blocks, where on average each basic block executes ";
+      outFile << (std::string)funcName + " "; 
+      outFile << (int)functionFrequency << " ";
+      outFile << numBBs << " ";
       double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
-      outFile << avgBBFrequency;
-      outFile << " times, has ";
+      outFile << avgBBFrequency << " ";
       double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
-      outFile << avgBBMemAccess;
-      outFile << " memory acceses, ";
+      outFile << avgBBMemAccess << " ";\
       double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
-      outFile << avgBBBiasedBranches;
-      outFile << " biased branches, and ";
+      outFile << avgBBBiasedBranches << " ";
       double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
-      outFile << avgBBUnbiasedBranches << " unbiased branches. It has ";
-      outFile << numLoops << " loops, where on average each loop executes ";
+      outFile << avgBBUnbiasedBranches << " ";
+      outFile << numLoops << " ";
       double avgExecutionsPerLoop = (double)(totalLoopExecutions) / (double)(numLoops);
-      outFile << avgExecutionsPerLoop << " times, has ";
-      double avgCyclesPerLoop = (double)(totalLoopCycles) / (double)(numLoops);
-      outFile << avgCyclesPerLoop << " total cycles, and ";
+      outFile << avgExecutionsPerLoop << " ";
       double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
-      outFile << avgCyclesPerLoopIteration << " cycles per loop iteration.\n";
-
-      outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags separated by whitespace and no other text.";
-      // outFile << "Name exactly one llvm optimization compile flag and nothing else";
+      outFile << avgCyclesPerLoopIteration << " ";
 
       // Close the file
       outFile.close();
+
+      // outFile << "The function named \'";
+      // outFile << (std::string)funcName;
+      // outFile << "\' executes ";
+      // outFile << functionFrequency;
+      // outFile << " times. It has ";
+      // outFile << numBBs;
+      // outFile << " basic blocks, where on average each basic block executes ";
+      // double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
+      // outFile << avgBBFrequency;
+      // outFile << " times, has ";
+      // double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
+      // outFile << avgBBMemAccess;
+      // outFile << " memory accesses, ";
+      // double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
+      // outFile << avgBBBiasedBranches;
+      // outFile << " biased branches, and ";
+      // double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
+      // outFile << avgBBUnbiasedBranches << " unbiased branches. It has ";
+      // outFile << numLoops << " loops, where on average each loop executes ";
+      // double avgExecutionsPerLoop = (double)(totalLoopExecutions) / (double)(numLoops);
+      // outFile << avgExecutionsPerLoop << " times and has ";
+      // // double avgCyclesPerLoop = (double)(totalLoopCycles) / (double)(numLoops);
+      // // outFile << avgCyclesPerLoop << " total cycles, and ";
+      // double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
+      // outFile << avgCyclesPerLoopIteration << " cycles per loop iteration.\n";
+      // outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags separated by whitespace and no other text.";
     }
     
     return PreservedAnalyses::all();
