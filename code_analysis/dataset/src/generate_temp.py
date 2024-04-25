@@ -46,7 +46,9 @@ def endless_ifs(program_name, ifs):
         file.write('  int num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0;\n')
         file.write('  bool bool1 = true, bool2 = false, bool3 = true, bool4 = false, bool5 = true;\n\n')
         # NOTE: change this from 5 to some other number if you want another number of nested if-statements
-        write_nested_ifs(file, 5)  # Start writing nested if-statements
+        # change the depth randomly 
+        actual_depth = random.choice(range(1, 10))
+        write_nested_ifs(file, actual_depth)  # Start writing nested if-statements
 
 def generate_programs():
     """Generate 1000 .c files with nested if-statements."""
