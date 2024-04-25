@@ -13,52 +13,50 @@ def eof(program_name):
     with open(program_name, 'a') as file:
         file.write(ender)
 
-def write_if_nested(program_name, depth, max_depth):
-    """Writes nested if-statements recursively with else blocks including further nesting."""
-    if depth > max_depth:
-        # print("the depth is: " + str(depth))
-        # print("the max depth is: " + str(max_depth))
+def write_nested_ifs(file, depth):
+    """Recursively writes nested if-statements into the file."""
+    if depth == 0:
         return
 
-    # Choosing random variables for conditions and assignments
-    v1, v2 = random.sample(range(1, 6), 2)  # Ensure different variables for num
-    b1, b2 = random.sample(range(1, 6), 2)  # Ensure different variables for bool
+    v1 = random.choice(range(1, 6))
+    v2 = random.choice(range(1, 6))
+    b1 = random.choice(range(1, 6))
+    b2 = random.choice(range(1, 6))
 
-    with open(program_name, 'a') as file:
-        file.write(f"bool bool{b1} = true;\n")
-        file.write(f"if (bool{b1} == bool{b2})\n{{\n")
-        file.write(f"  num{v1} = num{v2} + 1;\n")
-        file.write("} else {\n")
-        # file.write("HELLOOO")
-        write_if_nested(program_name, depth + 1, max_depth)
-        file.write(f"  num{v2} = num{v1} + 1;\n")
-        if depth + 1 <= max_depth:
-            # file.write("HELLLLLLLLLLOOOOOOOOO")
-            write_if_nested(program_name, depth + 1, max_depth)  # Nested block within the else
-        file.write("}\n")
+    # 10 - depth mod 10 gives the number of indents 
+    # depth of 10, want 0 indent
+    # depth of 9, want 1 indent 
+
+    indent = (10 - depth) % 10
+    indent_temp = "  " * (indent + 1) 
+
+    file.write(f"{indent_temp}bool bool{b1} = (rand() % 2 == 0);\n")
+    file.write(f"{indent_temp}if (bool{b1}) {{\n")  # Double {{ and }} are used to include literal braces
+    file.write(f"{indent_temp}    num{v1} += num{v2};\n")
+    write_nested_ifs(file, depth - 1)  # Recursive call for deeper nesting
+    file.write(f"{indent_temp}}} else {{\n")  # Correct use of braces for literal and variable
+    file.write(f"{indent_temp}    num{v2} -= num{v1};\n")
+    file.write(f"{indent_temp}}}\n")
 
 def endless_ifs(program_name, ifs):
     """Generates a chain of nested if-statements in the given program file."""
-    initial_values = '\n'.join(f"int num{i} = {random.randint(0, 100)};" for i in range(1, 6))
-    initial_bools = '\n'.join(f"bool bool{i} = true;" for i in range(1, 6))
-
     with open(program_name, 'a') as file:
-        file.write(initial_values + '\n' + initial_bools + '\n\n')
-
-    write_if_nested(program_name, 1, ifs)  # Start recursive nesting
-    # print("this is: " + str(ifs))
+        file.write('  int num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0;\n')
+        file.write('  bool bool1 = true, bool2 = false, bool3 = true, bool4 = false, bool5 = true;\n\n')
+        # NOTE: change this from 5 to some other number if you want another number of nested if-statements
+        write_nested_ifs(file, 5)  # Start writing nested if-statements
 
 def generate_programs():
     """Generate 1000 .c files with nested if-statements."""
     directory = './generated/'
-
+    
     if not os.path.exists(directory):
         os.makedirs(directory)
 
     for number in range(1, 1001):
         program_name = f"{directory}test_{number}.c"
         sof(program_name)
-        endless_ifs(program_name, 10)  # Control the depth of nesting; you can adjust logic here
+        endless_ifs(program_name, number % 5 + 1)  # Control depth of nesting, here it varies from 1 to 5
         eof(program_name)
 
 generate_programs()
