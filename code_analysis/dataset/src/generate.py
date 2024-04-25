@@ -27,15 +27,16 @@ def main_end(program_name):
 
 def endless_ifs(program_name, ifs):
     value = random.choice(range(0, 1000))
-    contents = 'int num = ' + str(value) + ';\n'
+    contents = 'int num = ' + str(value) + ';\nbool bool_0 = true;\n'
     for i in range(1, ifs + 1):
         is_enter = random.choice([0,1])
+        bool_num = random.choice(range(0, i + 1))
         if is_enter == 1:
             contents = contents + 'bool bool_' + str(i) 
-            contents = contents + ' = true;\nif (bool_' + str(i) + ')\n{\nnum += 1;\n}\n'
+            contents = contents + ' = true;\nif (bool_' + str(i) + ' == bool_' + str(bool_num) + ')\n{\nnum += 1;\n}\n'
         else:
             contents = contents + 'bool bool_' + str(i) 
-            contents = contents + ' = false;\nif (bool_' + str(i) + ')\n{\nnum += 1;\n}\n'
+            contents = contents + ' = false;\nif (bool_' + str(i) + ' == bool_' + str(bool_num) + ')\n{\nnum += 1;\n}\n'
     with open(program_name, 'a') as file:
         file.write(contents)
         file.close()
