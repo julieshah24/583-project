@@ -31,6 +31,8 @@ mkdir -p model/prompts
 # Convert source code to bitcode (IR).
 clang -emit-llvm -c ${BENCH} -Xclang -disable-O0-optnone -o ${1}.bc -Wno-deprecated-non-prototype
 
+start=$(date +%s) # Starting LLM compiler analysis
+
 # Instrument profiler passes. Generates profile data.
 opt -passes='pgo-instr-gen,instrprof' ${1}.bc -o ${1}.prof.bc
 
@@ -76,13 +78,17 @@ FLAGS=$(cat final_flags.txt)
 echo "$FLAGS"
 rm -rf final_flags.txt
 
+end=$(date +%s) # ended LLM compiler analysis
+
 # Get instruction counts
 echo "O2 baseline: "
-clang -O2 -o out ../code_analysis/dataset/src/${1}.c
+clang -O2 -o out ../code_analysis/dataset/src/${1}.c 2> /dev/null
 llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
 echo "O3 baseline: "
-clang -O3 -o out ../code_analysis/dataset/src/${1}.c
+clang -O3 -o out ../code_analysis/dataset/src/${1}.c 2> /dev/null
 llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
 echo "Our flag suggestions: "
-clang ${FLAGS} -o out ../code_analysis/dataset/src/${1}.c
+clang ${FLAGS} -o out ../code_analysis/dataset/src/${1}.c 2> /dev/null
 llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+
+echo "Time taken: $((end-start)) seconds."
