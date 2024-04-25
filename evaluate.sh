@@ -22,6 +22,12 @@ elif [ "${1}" = "compress" ];then
 ln -sf code_analysis/dataset/input/compress.in 
 fi
 
+mkdir model/prompts/program # To store stats for each function
+mkdir -p model/output
+mkdir -p model/prompts
+
+# TODO: Start evaluation loop here
+
 # Convert source code to bitcode (IR).
 clang -emit-llvm -c ${BENCH} -Xclang -disable-O0-optnone -o ${1}.bc -Wno-deprecated-non-prototype
 
@@ -56,4 +62,27 @@ opt --disable-output -load-pass-plugin="${PATH2LIB}" -passes="${PASS}" ${1}.prof
 # Cleanup: Remove this if you want to retain the created files.
 rm -f *.in *.in.Z default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll words
 
-mv model/prompts/prompt1.txt model/prompts/${1}.txt
+mv model/prompts/program model/prompts/${1} # rename output folder
+
+python3 create_prompt.py ${1} # generate prompt
+rm -rf model/prompts/${1}
+
+
+cd model && python3 query.py ${1}.txt # run model
+
+python3 parse_query_output.py ${1}.txt > final_flags.txt
+# FLAGS=$(<final_flags.txt)
+FLAGS=$(cat final_flags.txt)
+echo "$FLAGS"
+rm -rf final_flags.txt
+
+# Get instruction counts
+echo "O2 baseline: "
+clang -O2 -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+echo "O3 baseline: "
+clang -O3 -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'
+echo "Our flag suggestions: "
+clang ${FLAGS} -o out ../code_analysis/dataset/src/${1}.c
+llvm-objdump -d out | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+'

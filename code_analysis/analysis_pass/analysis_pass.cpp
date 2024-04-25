@@ -30,10 +30,8 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
     auto &bpi = FAM.getResult<BranchProbabilityAnalysis>(F);
     auto &LI = FAM.getResult<LoopAnalysis>(F);
     auto &SE = FAM.getResult<ScalarEvolutionAnalysis>(F);
-    //errs() << "Hello!";
 
-    // for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
-    // for (Function::iterator func_iter = F.begin(); func_iter != F.end(); func_iter++){
+    auto funcName = F.getName();
 
       // numbering basic blocks, not really helpful
       // std::unordered_map<BasicBlock*, unsigned> blockIDs;
@@ -47,15 +45,23 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       BasicBlock *functionEntry = &(F.getEntryBlock());
       uint64_t functionFrequency = bfi.getBlockFreq(functionEntry).getFrequency();
 
-      errs() << "FuncID: " << functionEntry << " ";
-      errs() << "Executions: " << functionFrequency << "\n";
+      // errs() << "FuncID: " << functionEntry << " ";
+      // errs() << "Executions: " << functionFrequency << "\n";
+
+      uint64_t numBBs = 0;
+      uint64_t totalBBFrequency = 0;
+      uint64_t totalMemAccess = 0;
+      uint64_t totalBiasedBranches = 0;
+      uint64_t totalUnbiasedBranches = 0;
 
       for(const BasicBlock &BB: F) {
+        numBBs += 1;
         // get the frequence of individual basic blocks
         std::optional< uint64_t > blockFrequencyOp = bfi.getBlockProfileCount(&BB);
         uint64_t blockFrequency = blockFrequencyOp.value_or(0);
-        errs() << "BlockID: " << &BB << " ";
-        errs() << "Executions: " << blockFrequency << " ";
+        // errs() << "BlockID: " << &BB << " ";
+        // errs() << "Executions: " << blockFrequency << " ";
+        totalBBFrequency += blockFrequency;
 
         // std::vector<Instruction*> branchInstructions;
         uint64_t numMemoryAccess = 0; // memory accesses in a basic block? --> not sure if there is a diff profile metric we want for this
@@ -70,22 +76,31 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             // branchInstructions.push_back(&I);  
             bool isBiasedBranch = false; 
             for(int i = 0; i < I.getNumSuccessors(); i++) {
-              BranchProbability brPr = bfi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
+              BranchProbability brPr = bpi.getEdgeProbability(I.getParent(), I.getSuccessor(i));
               if(brPr >= BranchProbability(90, 100)) { isBiasedBranch = true; }
             }         
             if(isBiasedBranch) { numBiasedBranches += 1; }
             else { numUnbiasedBranches += 1;}
           }
         }
-        errs() << "Memory Accesses: " << numMemoryAccess << " ";
-        errs() << "Biased Branches: " << numBiasedBranches << " ";
-        errs() << "Unbiased Branches: " << numUnbiasedBranches << "\n";
+
+        totalMemAccess += numMemoryAccess;
+        totalBiasedBranches += numBiasedBranches;
+        totalUnbiasedBranches += numUnbiasedBranches;
+        // errs() << "Memory Accesses: " << numMemoryAccess << " ";
+        // errs() << "Biased Branches: " << numBiasedBranches << " ";
+        // errs() << "Unbiased Branches: " << numUnbiasedBranches << "\n";
       }
 
       // use &li to iterate through the loops
       // this way, we don't have to iterate through each basic block and figure out which one has loop
       // loop through all of the loops
+      uint64_t numLoops = 0;
+      uint64_t totalLoopExecutions = 0;
+      uint64_t totalLoopCycles = 0;
+      uint64_t totalCyclesPerIteration = 0;
       for (LoopInfo::iterator loop_iter = LI.begin(); loop_iter != LI.end(); loop_iter++){
+        numLoops += 1;
         //errs() << "going through loops";
         BasicBlock *Header = (*loop_iter)->getHeader();
         // errs() << "This is the loop " << "\n";
@@ -99,12 +114,16 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
         // errs() << "Loop in function " << F.getName() << " with header block " << Header->getName()
         //        << " executes approximately " << HeaderFreq << " times.\n"
         //        << " Estimated total cycles (assuming " << CyclesPerIteration << " cycles/iteration): " << TotCycles << "\n";
-        errs() << "LoopID: " << Header << " ";
+        
+        // errs() << "LoopID: " << Header << " ";
         //errs() << "LoopID: " << (*loop_iter)->getHeader()->getName() << " ";
         //errs() << "Location: " << File.str() << ":" << LineNo << " ";
-        errs() << "Executions: " << HeaderFreq << " ";
-        errs() << "Cycles: " << TotCycles << " ";
-        errs() << "Cycles per Execution: " << CyclesPerIteration << "\n";
+        totalLoopExecutions += HeaderFreq;
+        totalLoopCycles += TotCycles;
+        totalCyclesPerIteration += CyclesPerIteration;
+        // errs() << "Executions: " << HeaderFreq << " ";
+        // errs() << "Cycles: " << TotCycles << " ";
+        // errs() << "Cycles per Execution: " << CyclesPerIteration << "\n";
         // Get debug location information
         //if (const DebugLoc &DL = Header->getTerminator()->getDebugLoc()) {
           // errs() << "going through loop info";
@@ -130,17 +149,59 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
       }
 
     // Open a file to write the prompt to with this profile data
-    std::ofstream outFile("./model/prompts/prompt1.txt");
+    std::ofstream outFile("./model/prompts/program/" + (std::string)funcName + ".txt");
 
     // Check if the file was opened successfully
     if (!outFile) {
         errs() << "Error: Unable to open file for writing\n";
     }
     else {
-      outFile << "Name exactly one llvm optimization compile flag and nothing else";
+      outFile << (std::string)funcName + " "; 
+      outFile << (int)functionFrequency << " ";
+      outFile << numBBs << " ";
+      double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
+      outFile << avgBBFrequency << " ";
+      double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
+      outFile << avgBBMemAccess << " ";\
+      double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
+      outFile << avgBBBiasedBranches << " ";
+      double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
+      outFile << avgBBUnbiasedBranches << " ";
+      outFile << numLoops << " ";
+      double avgExecutionsPerLoop = (double)(totalLoopExecutions) / (double)(numLoops);
+      outFile << avgExecutionsPerLoop << " ";
+      double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
+      outFile << avgCyclesPerLoopIteration << " ";
 
       // Close the file
       outFile.close();
+
+      // outFile << "The function named \'";
+      // outFile << (std::string)funcName;
+      // outFile << "\' executes ";
+      // outFile << functionFrequency;
+      // outFile << " times. It has ";
+      // outFile << numBBs;
+      // outFile << " basic blocks, where on average each basic block executes ";
+      // double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
+      // outFile << avgBBFrequency;
+      // outFile << " times, has ";
+      // double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
+      // outFile << avgBBMemAccess;
+      // outFile << " memory accesses, ";
+      // double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
+      // outFile << avgBBBiasedBranches;
+      // outFile << " biased branches, and ";
+      // double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
+      // outFile << avgBBUnbiasedBranches << " unbiased branches. It has ";
+      // outFile << numLoops << " loops, where on average each loop executes ";
+      // double avgExecutionsPerLoop = (double)(totalLoopExecutions) / (double)(numLoops);
+      // outFile << avgExecutionsPerLoop << " times and has ";
+      // // double avgCyclesPerLoop = (double)(totalLoopCycles) / (double)(numLoops);
+      // // outFile << avgCyclesPerLoop << " total cycles, and ";
+      // double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
+      // outFile << avgCyclesPerLoopIteration << " cycles per loop iteration.\n";
+      // outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags separated by whitespace and no other text.";
     }
     
     return PreservedAnalyses::all();
