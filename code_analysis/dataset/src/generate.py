@@ -36,7 +36,7 @@ def endless_ifs(program_name, ifs):
     v5 = random.choice(range(0, 100))
 
     contents = 'int num1 = ' + str(v1) + ';\nint num2 =  ' + str(v2) + ';\nint num3 =  ' + str(v3) + ';\nint num4 =  ' + str(v4) + ';\nint num5 =  ' + str(v5) + ';\n'
-    contents = contents + 'bool bool1 = true;\nbool bool2 = true;\nbool bool3 = true;\nbool bool4 = true;\nbool bool5 = true;\n\n'
+    contents = contents + 'bool bool1 = true;\nbool bool2 = true;\nbool bool3 = true;\nbool bool4 = false;\nbool bool5 = false;\n\n'
     
     for i in range(1, ifs + 1):
         value_num1 = random.choice(range(1, 6))
