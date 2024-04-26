@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run script for Group 2 EECS 583 W24 Final Project
-# Usage: sh run_all.sh
+# Usage: sh evaluate_all.sh
 
 PATH2LIB="./code_analysis/build/analysis_pass/AnalysisPass.so"
 PASS=analysis
@@ -12,7 +12,7 @@ mkdir -p model/prompts
 rm -f default.profraw *_prof *_fplicm *.bc *.profdata *_output *.ll *.in *.in.Z
 
 # Evaluation loop runs over each test file
-for file in ./code_analysis/dataset/src/*
+for file in ./code_analysis/dataset/src/*.c
 do
     # filename_dot_c=$(basename "$file")  # Extract filename without path
     # filename="${filename_dot_c%.*}"     # Remove file extension
