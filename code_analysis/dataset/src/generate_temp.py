@@ -27,17 +27,21 @@ def write_nested_ifs(file, depth):
     # depth of 10, want 0 indent
     # depth of 9, want 1 indent 
 
-    indent = (10 - depth) % 10
+    indent = (5 - depth) % 5
     # print("The indent is " + str(indent))
     # NOTE: indent is one less than the level of depth
-    indent_temp = "  " * (indent - 4) 
-
+    indent_temp = "  " * (indent + 1) 
+    if depth != 5: 
+        indent_temp = "  " + indent_temp
+    # if depth != 10:
+    #     file.write(f"{indent_temp}    bool bool{b1} = (rand() % 2 == 0);\n")
+    # else: 
     file.write(f"{indent_temp}bool bool{b1} = (rand() % 2 == 0);\n")
     file.write(f"{indent_temp}if (bool{b1}) {{\n")  # Double {{ and }} are used to include literal braces
-    file.write(f"{indent_temp}    num{v1} += num{v2};\n")
+    file.write(f"{indent_temp}num{v1} += num{v2};\n")
     write_nested_ifs(file, depth - 1)  # Recursive call for deeper nesting
     file.write(f"{indent_temp}}} else {{\n")  # Correct use of braces for literal and variable
-    file.write(f"{indent_temp}    num{v2} -= num{v1};\n")
+    file.write(f"{indent_temp}num{v2} -= num{v1};\n")
     file.write(f"{indent_temp}}}\n")
 
 def endless_ifs(program_name, ifs):
@@ -47,7 +51,8 @@ def endless_ifs(program_name, ifs):
         file.write('  bool bool1 = true, bool2 = false, bool3 = true, bool4 = false, bool5 = true;\n\n')
         # NOTE: change this from 5 to some other number if you want another number of nested if-statements
         # changing the depth randomly each time
-        write_nested_ifs(file, random.choice(range(1, 10)))  # Start writing nested if-statements
+        # random.choice(range(1, 10))
+        write_nested_ifs(file, 5)  # Start writing nested if-statements
 
 def generate_programs():
     """Generate 1000 .c files with nested if-statements."""
