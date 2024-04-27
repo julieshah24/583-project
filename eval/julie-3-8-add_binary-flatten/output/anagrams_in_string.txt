@@ -1,0 +1,3 @@
+Here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
+
+-O3 -funroll-loops -fomit-frame-pointer -falign-functions=64 -fPIC -fexceptions -finline-limit=4096 -floop-parallelize-all -floop-strip-mine -floop-peel -floop-reduce -floop-optimize -floop-unroll -floop-rewrite-partially -floop-rewrite-partially-2 -floop-rewrite-partially-3 -floop-rewrite-partially-4 -floop-rewrite-partially-

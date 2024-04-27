@@ -1,0 +1,3 @@
+Based on the profile information, the ideal real clang llvm optimization compilation flags are:
+
+-O3 -mllvm -unroll-all -mllvm -inline-threshold=1000 -mllvm -loop-unroll-limit=1000 -mllvm -scev-aa -mllvm -global-alias -mllvm -reduce-loop-unrolling -mllvm -simplifycfg -mllvm -verify -mllvm -unroll-loops -mllvm -inline-functions -mllvm -enable-iv-reductions -mllvm -iv-reduction-strategy=2 -mllvm -iv-reduction-max-iterations=

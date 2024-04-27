@@ -1,0 +1,4 @@
+Based on the profile information, here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
+
+```
+-funroll-loops -frename-registers -fomit-frame-pointer -ffast-math -fschedule-ras -fschedule-float -fmove-all-movables -fno-strict-aliasing -fno-strict-overflow -fno-traditional -fno-semantic-asm -fno-asm-asm -fno-asm-asm -fno-asm-asm -fno-asm-asm -fno-asm-asm -fno

@@ -1,0 +1,5 @@
+Based on the profile information, here are the ideal, real, clang, and llvm optimization compilation flags separated by whitespace and nothing else:
+
+-O3 -funroll-loops -finline-functions -fomit-frame-pointer -fschedule-insns2 -fstrict-aliasing -fstrict-overflow -ftrapv
+
+Note that these flags are based on the profile information and may not be the optimal set of flags for your specific use case.

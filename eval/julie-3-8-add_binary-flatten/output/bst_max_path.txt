@@ -1,0 +1,3 @@
+Based on the profile information, the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else are:
+
+-O3 -march=native -mtune=native -fomit-frame-pointer -funroll-loops -finline-functions -fpeephole -fmerge-all-constants -fmerge-all-arrays -fmerge-all-strings -fmerge-all-structs -fmerge-all-unions -fmerge-all-enum -fmerge-all-flags -fmerge-all-bool -fmerge-all-int -fmerge-all-float -fmerge-all-double -fmerge-all-long -fmerge-all-

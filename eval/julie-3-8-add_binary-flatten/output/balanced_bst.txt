@@ -1,0 +1,5 @@
+Based on the profile information, the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else are:
+
+-O3 -ipo -xHost -fPIC -O2 -flto -fuse-linker-plugin -fvisibility=hidden -fno-strict-aliasing -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-omit-default-init -fno-strict-aliasing -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-omit-default-init
+
+Note that the above flags are not necessarily the optimal combination for your specific use case.

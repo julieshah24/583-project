@@ -1,0 +1,5 @@
+Based on the provided information, the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else are:
+
+-O3 -march=native -mtune=native -fomit-frame-pointer -funroll-loops -finline-functions -fpeephole -fno-strict-aliasing -fno-delete-null-pointer-checks
+
+Note that these flags are specific to the clang and LLVM compilers, and may not be compatible with other compilers.

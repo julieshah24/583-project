@@ -1,0 +1,5 @@
+Based on the profile information, the ideal real clang llvm optimization compilation flags are:
+
+-O3 -flto -ffunction-sections -fdata-sections -fPIC -fno-strict-aliasing -fwrapv -Wl,-z,noexecstack -Wl,-z,text
+
+These flags are a combination of optimization flags, link-time optimization flags, and flags that control the layout and packing of code.

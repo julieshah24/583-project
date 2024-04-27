@@ -1,0 +1,3 @@
+Based on the provided profile information, I would recommend the following ideal real clang llvm optimization compilation flags:
+
+-O2 -march=native -mtune=native -fomit-frame-pointer -fno-strict-aliasing -fno-delete-null-pointer-checks -fno-merge-all-constants -fno-merge-all-variables -fno-optimize-sibling-calls -fno-optimize-branch-predictions -fno-optimize-branch-predictions -fno-optimize-branch-predictions -fno-optimize-branch-predictions -fno-optimize-branch-predictions

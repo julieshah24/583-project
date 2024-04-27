@@ -1,0 +1,3 @@
+Based on the provided profile information, here are the ideal, real, clang, and llvm optimization compilation flags separated by whitespace and nothing else:
+
+clang: -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-exceptions -fno-float-store -fno-signed-char -fno-strict-aliasing -fno-traditional -fno-weak -fno-weak-aliasing -fno-weak-exceptions -fno-weak-float-store -fno-weak-strict-aliasing -fno-weak

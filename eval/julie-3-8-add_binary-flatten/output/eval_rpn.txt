@@ -1,0 +1,3 @@
+Based on the provided profile information, here are the ideal, real, Clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
+
+`-O3 -march=native -mtune=native -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-trapping-math -fno-math-errno -fno-signed-zeros -fno-denormal-float -fno-inf-fp -fno-nan-fp -fpreserve-ffpexcept -fno-association -fno-branch

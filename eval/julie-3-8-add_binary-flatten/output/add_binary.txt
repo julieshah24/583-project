@@ -1,0 +1,4 @@
+Here are the ideal, real, clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
+
+```
+-O3 -fomit-frame-pointer -funroll-loops -finline-functions -fPIC -fmerge-all-constants -fstrict-aliasing -fstrict-overflow -ftrapv -fno-strict-aliasing -fno-strict-overflow -fno-trapv -msse -msse2 -msse3 -mfpmath=sse -fpack-struct -fno-strict-aliasing -fno-strict-overflow -fno-trapv

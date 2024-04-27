@@ -1,0 +1,3 @@
+Here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
+
+-O3 -funroll-loops -fomit-frame-pointer -fPIC -fno-strict-aliasing -fno-rtti -fno-exceptions -fno-asynchronous-unwind-tables -fno-threadsafe-statics -fno-weak -fno-inline-functions -fno-strict-aliasing -fno-rtti -fno-exceptions -fno-asynchronous-unwind-tables -fno-threadsafe-statics -fno-weak

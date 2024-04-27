@@ -1,0 +1,5 @@
+Here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
+
+-O3 -ipo -x86-64 -m64 -mtune=intel -fomit-frame-pointer -falign-loops=16 -falign-jumps=16 -Wl,-z,nocombreloc -Wl,-z,relro -Wl,-z,now -fno-fast-math -fno-exceptions -fno-rtti -fno-stack-checking -fno-threadsafe-statics -fno-use-cxa-atexit -fno-weak
+
+Note that the above flags are specific

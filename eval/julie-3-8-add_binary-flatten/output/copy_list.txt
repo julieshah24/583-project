@@ -1,0 +1,11 @@
+Based on the profile information, I recommend the following optimization compilation flags separated by whitespace and nothing else:
+
+-O3 -ipo -xhost -fp-model fast -no-prec-div -opt-prefetch -opt-mem-layout-trans -Wl,-z,deflate -Wl,-z,nocopyreloc
+
+These flags are a combination of the following:
+
+* -O3: Enables the highest level of optimization.
+* -ipo: Enables interprocedural optimization.
+* -xhost: Enables host-based optimization.
+* -fp-model fast: Enables fast floating-point model.
+* -no-prec-div: Dis

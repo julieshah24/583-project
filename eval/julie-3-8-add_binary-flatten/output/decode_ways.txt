@@ -1,0 +1,12 @@
+Here are the ideal, real, and clang/LLVM optimization compilation flags:
+
+Ideal flags:
+-O2 -funroll-loops -fomit-frame-pointer
+
+Real flags:
+-O2 -funroll-loops -fomit-frame-pointer
+
+Clang/LLVM flags:
+-O2 -funroll-loops -fomit-frame-pointer -flto -fwhole-program-device-link
+
+Note that the ideal, real, and clang/LLVM flags may vary depending on the specific compiler and platform being used.

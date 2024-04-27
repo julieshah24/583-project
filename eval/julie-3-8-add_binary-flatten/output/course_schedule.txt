@@ -1,0 +1,3 @@
+Based on the profile information, I recommend the following ideal real clang llvm optimization compilation flags:
+
+`-O3 -march=native -mtune=native -fomit-frame-pointer -funroll-loops -finline-functions -fpeephole -floop-strip-mine -floop-peel -floop-interchange -floop-unroll -floop-distribute -floop-fission -floop-fuse -floop-contract -floop-expand -floop-parallelize -floop-schedule -floop-unroll-and-jam -floop-unroll-and-jam-2 -floop

@@ -1,0 +1,5 @@
+Based on the profile information, the ideal real clang llvm optimization compilation flags are:
+
+-O3 -ipo -xHost -fPIC -fexceptions -fstack-protector -fno-strict-aliasing -fno-omit-frame-pointer -fno-var-tracking -fno-eliminate-unused-debug-types
+
+Note that these flags are not necessarily the best choice for every project, and you may need to adjust them based on your specific needs.
