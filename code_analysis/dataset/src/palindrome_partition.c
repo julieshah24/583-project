@@ -74,16 +74,11 @@ char ***partition(char* s, int* returnSize, int** returnColumnSizes)
     return results;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test string\n");
-        exit(-1);
-    }
-
     int i, j, count = 0;
     int *col_sizes;
-    char ***lists = partition(argv[1], &count, &col_sizes);
+    char ***lists = partition("amiapalindromeemordnilapaima", &count, &col_sizes);
     for (i = 0; i < count; i++) {
         char **list = lists[i];
         for (j = 0; j < col_sizes[i]; j++) {

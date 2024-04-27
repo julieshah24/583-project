@@ -35,12 +35,8 @@ static bool isNumber(const char *s)
     return *s == '\0' && if_find_num == true;
 }
 
-int main(int argc, char** argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test number\n");
-        exit(-1);
-    }
-    printf("%s\n", isNumber(argv[1]) ? "true" : "false");
+    printf("%s\n", isNumber("123456") ? "true" : "false");
     return 0;
 }

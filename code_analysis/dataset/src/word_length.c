@@ -17,13 +17,8 @@ int lengthOfLastWord(char *s)
     return word_len;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test word\n");
-        exit(-1);
-    }
-
-    printf("%d\n", lengthOfLastWord(argv[1]));
+    printf("%d\n", lengthOfLastWord("abcdefghijklmnopqrstuvwxyz"));
     return 0;
 }

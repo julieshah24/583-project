@@ -32,12 +32,8 @@ static bool isValid(char *s)
     return n == 0;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test xxxx");
-        exit(-1);
-    }
-    printf("%s\n", isValid(argv[1]) ? "true" : "false");
+    printf("%s\n", isValid("(([][()]))((()))") ? "true" : "false");
     return 0;
 }

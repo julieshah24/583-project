@@ -59,12 +59,8 @@ static char *minWindow(char *s, char *t)
     return result;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
-    printf("Answer: %s\n", minWindow(argv[1], argv[2]));
+    printf("Answer: %s\n", minWindow("montanacountryroadtakemehometotheplace", "try"));
     return 0;
 }

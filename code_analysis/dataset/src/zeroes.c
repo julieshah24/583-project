@@ -7,13 +7,8 @@ static int trailingZeroes(int n)
     return n == 0 ? 0 : n / 5 + trailingZeroes(n / 5);
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
-
-    printf("%d\n", trailingZeroes(atoi(argv[1])));
+    printf("%d\n", trailingZeroes(100200));
     return 0;
 }

@@ -43,13 +43,8 @@ static bool isMatch(char* s, char* p)
     return *p == '\0';
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
-
-    printf("%s\n", isMatch(argv[1], argv[2]) ? "true" : "false");
+    printf("%s\n", isMatch("ZIMZALABIM", "LA") ? "true" : "false");
     return 0;
 }

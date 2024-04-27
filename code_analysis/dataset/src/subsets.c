@@ -33,18 +33,12 @@ int** subsets(int* nums, int numsSize, int* returnSize, int** returnColumnSizes)
     return sets;
 }
 
-int main(int argc, char **argv)
+int main()
 {
     int i, j;
-    if (argc <= 1) {
-        fprintf(stderr, "Usage: ./test array...\n");
-        exit(-1);
-    }
-    int size = argc - 1;
-    int *nums = malloc(size * sizeof(int));
-    for (i = 0; i < size; i++) {
-        nums[i] = atoi(argv[i + 1]);
-    }
+    int size = 5;
+    int nums[5] = {1,2,3,4,5};
+
     int *sizes;
     int count;
     int **lists = subsets(nums, size, &count, &sizes);

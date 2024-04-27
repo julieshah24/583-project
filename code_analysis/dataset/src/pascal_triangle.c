@@ -26,15 +26,10 @@ int** generate(int numRows, int *returnSize, int** returnColumnSizes)
     return triangle;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
-
     int i, j, count, *col_sizes;
-    int row = atoi(argv[1]);
+    int row = 8;
     int **triangle = generate(row, &count, &col_sizes);
     for (i = 0; i < row; i++) {
         for (j = 0; j < col_sizes[i]; j++) {

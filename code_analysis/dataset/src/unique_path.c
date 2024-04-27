@@ -19,12 +19,8 @@ static int uniquePaths(int m, int n)
     return grids[m * n - 1];
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test m n\n");
-        exit(-1);
-    }
-    printf("%d\n", uniquePaths(atoi(argv[1]), atoi(argv[2])));
+    printf("%d\n", uniquePaths(5, 8));
     return 0;
 }

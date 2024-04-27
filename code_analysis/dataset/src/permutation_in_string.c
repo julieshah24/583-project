@@ -32,15 +32,10 @@ bool checkInclusion(char * s1, char * s2)
     return false;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
-
-    char *t = argv[1];
-    char *s = argv[2];
+    char *t = "mmnn";
+    char *s = "nnmm";
     printf("%s\n", checkInclusion(t, s) ? "true" : "false");
     return 0;
 }

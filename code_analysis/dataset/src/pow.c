@@ -20,12 +20,8 @@ double my_pow(double x, int n)
     return n < 0 ? 1 / fast_pow(x, -n) : fast_pow(x, n);
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test x n\n");
-        exit(-1);
-    }
-    printf("%lf\n", my_pow(atoi(argv[1]), atoi(argv[2])));
+    printf("%lf\n", my_pow(7, 8));
     return 0;
 }

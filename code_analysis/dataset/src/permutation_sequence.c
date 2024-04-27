@@ -39,13 +39,8 @@ static char* getPermutation(int n, int k)
     return result;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test n, k\n");
-        exit(-1);
-    }
-
-    printf("%s\n", getPermutation(atoi(argv[1]), atoi(argv[2])));
+    printf("%s\n", getPermutation(1547, 5417));
     return 0;
 }

@@ -30,13 +30,8 @@ static char* convert(char* s, int numRows)
     return new_str;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc < 3) {
-        fprintf(stderr, "./test string num\n");
-        exit(-1);
-    }
-
-    printf("%s\n", convert(argv[1], atoi(argv[2])));
+    printf("%s\n", convert("hellosup", 3));
     return 0;
 }

@@ -35,14 +35,10 @@ static char** generateParenthesis(int n, int* returnSize)
     return parentheses;
 }
 
-int main(int argc, char **argv)
+int main()
 {
     int i, count;
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test 3\n");
-        exit(-1);
-    }
-    char ** lists = generateParenthesis(atoi(argv[1]), &count);
+    char ** lists = generateParenthesis(3, &count);
     for (i = 0; i < count; i++) {
         printf("%s\n", lists[i]);
     }

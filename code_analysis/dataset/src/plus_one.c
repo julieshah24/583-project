@@ -32,18 +32,11 @@ static int* plusOne(int* digits, int digitsSize, int* returnSize)
     return result;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test num\n");
-        exit(-1);
-    }
-
-    int i, count = strlen(argv[1]);
-    int *digits = malloc(count * sizeof(int));
-    for (i = 0; i < count; i++) {
-        digits[i] = argv[1][i] - '0';
-    }
+    int i;
+    int count = 5;
+    int digits[5] = {1,2,3,4,5};
 
     int len = 0;
     int *res = plusOne(digits, count, &len);

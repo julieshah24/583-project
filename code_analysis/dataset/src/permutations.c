@@ -75,23 +75,16 @@ int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes)
     return results;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc <= 1) {
-        fprintf(stderr, "Usage: ./test ...\n");
-        exit(-1);
-    }
-
-    int i, j, count = argc - 1;
-    int *nums = malloc(count * sizeof(int));
-    for (i = 0; i < count; i++) {
-        nums[i] = atoi(argv[i + 1]);
-    }
+    int i, j;
+    int count = 6;
+    int nums[6] = {1,2,3,4,5,6};
 
     int *size;
-    int **lists = permute(nums, argc - 1, &count, &size);
+    int **lists = permute(nums, 6, &count, &size);
     for (i = 0; i < count; i++) {
-        for (j = 0; j < argc - 1; j++) {
+        for (j = 0; j < 6; j++) {
             printf("%d", lists[i][j]);
         }
         putchar('\n');
