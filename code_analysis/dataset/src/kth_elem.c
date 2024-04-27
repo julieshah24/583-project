@@ -102,16 +102,17 @@ int findKthLargest(int* nums, int numsSize, int k)
 
 int main(int argc, char **argv)
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: ./test k n1 n2...\n");
-        exit(-1);
-    }
+    // if (argc < 3) {
+    //     fprintf(stderr, "Usage: ./test k n1 n2...\n");
+    //     exit(-1);
+    // }
 
-    int i, count = argc - 2;
-    int *nums = malloc(count * sizeof(int));
-    for (i = 0; i < count; i++) {
-        nums[i] = atoi(argv[i + 2]);
-    }
-    printf("%d\n", findKthLargest(nums, count, atoi(argv[1])));
+    // int i, count = argc - 2;
+    // int *nums = malloc(count * sizeof(int));
+    // for (i = 0; i < count; i++) {
+    //     nums[i] = atoi(argv[i + 2]);
+    // }
+    int nums[] = {3,2,3,1,2,4,5,5,6};
+    printf("%d\n", findKthLargest(nums, 9, 4));
     return 0;
 }

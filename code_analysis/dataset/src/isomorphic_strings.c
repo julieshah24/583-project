@@ -22,11 +22,12 @@ static bool isIsomorphic(char *s, char *t)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test s1 s2\n");
-        exit(-1);
-    }
+    // if (argc != 3) {
+    //     fprintf(stderr, "Usage: ./test s1 s2\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", isIsomorphic(argv[1], argv[2]) ? "true" : "false");
+    printf("%s\n", isIsomorphic("paper", "title") ? "true" : "false");
+    printf("%s\n", isIsomorphic("foo", "bar") ? "true" : "false");
     return 0;
 }

@@ -14,11 +14,11 @@ static int hammingWeight(uint32_t n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
-    printf("%d\n", hammingWeight(atoi(argv[1])));
+    printf("%d\n", hammingWeight(100001));
     return 0;
 }

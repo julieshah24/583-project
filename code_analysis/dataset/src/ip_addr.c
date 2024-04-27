@@ -69,13 +69,13 @@ static char** restoreIpAddresses(char* s, int* returnSize)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test num\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test num\n");
+    //     exit(-1);
+    // }
 
     int i, count = 0;
-    char **list = restoreIpAddresses(argv[1], &count);
+    char **list = restoreIpAddresses("101023", &count);
     for (i = 0; i < count; i++) {
         printf("%s\n", list[i]);
     }

@@ -29,11 +29,11 @@ int minInsertions(char * s){
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test s\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test s\n");
+    //     exit(-1);
+    // }
 
-    printf("%d\n", minInsertions(argv[1]));
+    printf("%d\n", minInsertions("leetcode"));
     return 0;
 }

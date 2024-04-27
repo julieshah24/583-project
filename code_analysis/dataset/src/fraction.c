@@ -159,12 +159,12 @@ char* fractionToDecimal(int numerator, int denominator)
 int main(int argc, char** argv)
 {
 #if 1
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test numerator denominator\n");
-        exit(-1);
-    }
+    // if (argc != 3) {
+    //     fprintf(stderr, "Usage: ./test numerator denominator\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", fractionToDecimal(atoi(argv[1]), atoi(argv[2])));
+    printf("%s\n", fractionToDecimal(-2147483648, -1999));
 #else
     printf("%s\n", fractionToDecimal(1, 6));
     printf("%s\n", fractionToDecimal(100, 6));

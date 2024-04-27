@@ -54,10 +54,10 @@ static bool isInterleave(char* s1, char* s2, char* s3)
 
 int main(int argc, char **argv)
 {
-    if (argc != 4) {
-        fprintf(stderr, "Usage: ./test s1 s2 s3\n");
-        exit(-1);
-    }
-    printf("%s\n", isInterleave(argv[1], argv[2], argv[3]) ? "true" : "false");
+    // if (argc != 4) {
+    //     fprintf(stderr, "Usage: ./test s1 s2 s3\n");
+    //     exit(-1);
+    // }
+    printf("%s\n", isInterleave("aabcc", "dbbca", "aadbbbaccc") ? "true" : "false");
     return 0;
 }

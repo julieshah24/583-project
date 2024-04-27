@@ -27,11 +27,11 @@ static bool isHappy(int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", isHappy(atoi(argv[1])) ? "true" : "false");
+    printf("%s\n", isHappy(9999) ? "true" : "false");
     return 0;
 }

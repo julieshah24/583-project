@@ -98,13 +98,14 @@ static char** fullJustify(char** words, int wordsSize, int maxWidth, int* return
 
 int main(int argc, char **argv)
 {
-    if (argc <= 2) {
-        fprintf(stderr, "Usage: ./test maxsize words...\n");
-        exit(-1);
-    }
+    // if (argc <= 2) {
+    //     fprintf(stderr, "Usage: ./test maxsize words...\n");
+    //     exit(-1);
+    // }
+    char *words[] = {"Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"}; 
 
     int i, count;
-    char** lines = fullJustify(argv + 2, argc - 2, atoi(argv[1]), &count);
+    char** lines = fullJustify(words, 10, 20, &count);
     for (i = 0; i < count; i++) {
         printf("%s\n", lines[i]);
     }

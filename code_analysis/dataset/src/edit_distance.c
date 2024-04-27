@@ -63,10 +63,10 @@ static int minDistance(char* word1, char* word2)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test word1 word2\n");
-        exit(-1);
-    }
-    printf("%d\n", minDistance(argv[1], argv[2]));
+    // if (argc != 3) {
+    //     fprintf(stderr, "Usage: ./test word1 word2\n");
+    //     exit(-1);
+    // }
+    printf("%d\n", minDistance("abba", "abccb"));
     return 0;
 }

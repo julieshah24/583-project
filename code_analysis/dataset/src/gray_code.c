@@ -22,13 +22,13 @@ int* grayCode(int n, int* returnSize) {
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
     int i, count;
-    int *list = grayCode(atoi(argv[1]), &count);
+    int *list = grayCode(500, &count);
     for (i = 0; i < count; i++) {
         printf("%d ", list[i]);
     }

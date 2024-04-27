@@ -70,57 +70,57 @@ python3 create_prompt.py ${1} # generate prompt
 rm -rf model/prompts/${1}
 
 
-cd model && python3 query.py ${1}.txt # run model
+# cd model && python3 query.py ${1}.txt # run model
 
-python3 parse_query_output.py ${1}.txt > final_flags.txt
-# FLAGS=$(<final_flags.txt)
-FLAGS=$(cat final_flags.txt)
-echo "$FLAGS"
-rm -rf final_flags.txt
+# python3 parse_query_output.py ${1}.txt > final_flags.txt
+# # FLAGS=$(<final_flags.txt)
+# FLAGS=$(cat final_flags.txt)
+# echo "$FLAGS"
+# rm -rf final_flags.txt
 
-end=$(date +%s) # ended LLM compiler analysis
+# end=$(date +%s) # ended LLM compiler analysis
 
-# echo "Time taken: $((end-start)) seconds."
-output_file="output.csv"
+# # echo "Time taken: $((end-start)) seconds."
+# output_file="output.csv"
 
-compile_and_time() {
-    local opt_level=$1
-    local src_file="../code_analysis/dataset/advait/${2}.c"
-    local opt_level_escaped=$(echo "$opt_level" | tr ' ' '_')
-    local exe_file="out_$opt_level_escaped"
+# compile_and_time() {
+#     local opt_level=$1
+#     local src_file="../code_analysis/dataset/advait/${2}.c"
+#     local opt_level_escaped=$(echo "$opt_level" | tr ' ' '_')
+#     local exe_file="out_$opt_level_escaped"
 
-    # Time compilation
-    local compile_start=$(date +%s.%N)
-    clang $opt_level -o $exe_file $src_file 2> /dev/null
-    local compile_end=$(date +%s.%N)
-    local compile_time=$(echo "$compile_end - $compile_start" | bc)
+#     # Time compilation
+#     local compile_start=$(date +%s.%N)
+#     clang $opt_level -o $exe_file $src_file 2> /dev/null
+#     local compile_end=$(date +%s.%N)
+#     local compile_time=$(echo "$compile_end - $compile_start" | bc)
 
-    # Count instructions
-    local instruction_count=$(llvm-objdump -d $exe_file | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+')
+#     # Count instructions
+#     local instruction_count=$(llvm-objdump -d $exe_file | grep -cE '^\s+[a-f0-9]+:\s+[0-9a-f]+(\s+[0-9a-f]+)?\s+\w+\s+')
 
-    # Time execution
-    local exec_start=$(date +%s.%N)
-    # ./$exe_file
-    local exec_end=$(date +%s.%N)
-    local exec_time=$(echo "$exec_end - $exec_start" | bc)
+#     # Time execution
+#     local exec_start=$(date +%s.%N)
+#     # ./$exe_file
+#     local exec_end=$(date +%s.%N)
+#     local exec_time=$(echo "$exec_end - $exec_start" | bc)
 
-    # echo "$instruction_count,$compile_time,$exec_time"
-    echo "$instruction_count"
-}
+#     # echo "$instruction_count,$compile_time,$exec_time"
+#     echo "$instruction_count"
+# }
 
-filename=$1
+# filename=$1
 
-# Compile and execute with O2 optimization
-echo "Compiling and executing with O2 optimization..."
-o2_results=$(compile_and_time "-O2" $filename)
+# # Compile and execute with O2 optimization
+# echo "Compiling and executing with O2 optimization..."
+# o2_results=$(compile_and_time "-O2" $filename)
 
-# Compile and execute with O3 optimization
-echo "Compiling and executing with O3 optimization..."
-o3_results=$(compile_and_time "-O3" $filename)
+# # Compile and execute with O3 optimization
+# echo "Compiling and executing with O3 optimization..."
+# o3_results=$(compile_and_time "-O3" $filename)
 
-# Compile and execute with custom flags
-echo "Compiling and executing with custom flags..."
-custom_results=$(compile_and_time "${FLAGS}" $filename)
+# # Compile and execute with custom flags
+# echo "Compiling and executing with custom flags..."
+# custom_results=$(compile_and_time "${FLAGS}" $filename)
 
-# Write to CSV
-echo "${filename},${o2_results},${o3_results},${custom_results}, ${FLAGS}" >> "$output_file"
+# # Write to CSV
+# echo "${filename},${o2_results},${o3_results},${custom_results}, ${FLAGS}" >> "$output_file"
