@@ -64,10 +64,11 @@ static int calculator(char *s)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test string\n");
-        exit(-1);
-    }
-    printf("%d\n", calculator(argv[1]));
+    char *str1 = "1 + 1";
+    printf("%d\n", calculator(str1));
+    char *str2 = " 2-1 + 2 ";
+    printf("%d\n", calculator(str2));
+    char *str3 = "(1+(4+5+2)-3)+(6+8)";
+    printf("%d\n", calculator(str3));
     return 0;
 }

@@ -88,16 +88,26 @@ static void show(struct ListNode *ln)
 
 int main(int argc, char **argv)
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: ./test n1 n2\n");
-        exit(-1);
-    }
-
-    struct ListNode *l1 = node_build(argv[1]);
-    struct ListNode *l2 = node_build(argv[2]);
+    // test case 1
+    struct ListNode *l1 = node_build("234\n");
+    struct ListNode *l2 = node_build("564\n");
     struct ListNode *res = addTwoNumbers(l1, l2);
     show(l1);
     show(l2);
+    show(res);
+
+    struct ListNode *l3 = node_build("0\n");
+    struct ListNode *l4 = node_build("0\n");
+    struct ListNode *res2 = addTwoNumbers(l3, l4);
+    show(l4);
+    show(l4);
+    show(res);
+
+    struct ListNode *l5 = node_build("9999999\n");
+    struct ListNode *l6 = node_build("9999\n");
+    struct ListNode *res3 = addTwoNumbers(l5, l6);
+    show(l5);
+    show(l6);
     show(res);
     return 0;
 }

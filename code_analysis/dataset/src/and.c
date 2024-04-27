@@ -18,11 +18,8 @@ static int rangeBitwiseAnd(int m, int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test m n\n");
-        exit(-1);
-    }
-
-    printf("%d\n", rangeBitwiseAnd(atoi(argv[1]), atoi(argv[2])));
+    printf("%d\n", rangeBitwiseAnd(5, 7));
+    printf("%d\n", rangeBitwiseAnd(0, 0));
+    printf("%d\n", rangeBitwiseAnd(1, 2147483647));
     return 0;
 }

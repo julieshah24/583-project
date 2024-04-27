@@ -37,17 +37,8 @@ int** combine(int n, int k, int* returnSize, int** returnColumnSizes) {
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test n k\n");
-        exit(-1);
-    }
-
-    int n = atoi(argv[1]);
-    int k = atoi(argv[2]);
-    if (k > n) {
-        fprintf(stderr, "n(=%d) must larger than k(=%d)\n", n, k);
-        exit(-1);
-    }
+    int n = 4;
+    int k = 2;
 
     int i, j, *col_sizes, count = 0;
     int **lists = combine(n, k, &count, &col_sizes);
@@ -57,5 +48,19 @@ int main(int argc, char **argv)
         }
         printf("\n");
     }
+
+    n = 1;
+    k = 1;
+
+    int *col_sizes1;
+    count = 0;
+    int **lists1 = combine(n, k, &count, &col_sizes1);
+    for (i = 0; i < count; i++) {
+        for (j = 0; j < col_sizes1[i]; j++) {
+            printf("%d ", lists1[i][j]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }

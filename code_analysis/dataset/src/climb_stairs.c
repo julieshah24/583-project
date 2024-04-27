@@ -37,11 +37,8 @@ static int climbStairs(int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
-
-    printf("%d\n", climbStairs(atoi(argv[1])));
+    
+    printf("%d\n", climbStairs(2));
+    printf("%d\n", climbStairs(3));
     return 0;
 }

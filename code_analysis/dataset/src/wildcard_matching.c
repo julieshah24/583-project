@@ -43,8 +43,16 @@ static bool isMatch(char* s, char* p)
     return *p == '\0';
 }
 
-int main()
+int main(int argc, char **argv)
 {
-    printf("%s\n", isMatch("ZIMZALABIM", "LA") ? "true" : "false");
+    char *str1 = "aa\n";
+    char *str2 = "a\n";
+    printf("%s\n", isMatch(str1, str2) ? "true" : "false");
+    char *str3 = "aa\n";
+    char *str4 = "*\n";
+    printf("%s\n", isMatch(str3, str4) ? "true" : "false");
+    char *str5 = "cb\n";
+    char *str6 = "?a\n";
+    printf("%s\n", isMatch(str5, str6) ? "true" : "false");
     return 0;
 }

@@ -22,11 +22,12 @@ int lengthOfLongestSubstring(char *s)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test string\n");
-        exit(-1);
-    }
-
-    printf("%d\n", lengthOfLongestSubstring(argv[1]));
+    
+    char *str1 = "abcabcbb\n";
+    char *str2 = "bbbbb\n";
+    char *str3 = "pwwkew\n";
+    printf("%d\n", lengthOfLongestSubstring(str1));
+    printf("%d\n", lengthOfLongestSubstring(str2));
+    printf("%d\n", lengthOfLongestSubstring(str3));
     return 0;
 }

@@ -39,10 +39,12 @@ static char* multiply(char* num1, char* num2)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test m1 m2\n");
-        exit(-1);
-    }
-    printf("%s\n", multiply(argv[1], argv[2]));
+    char *str1 = "2\n";
+    char *str2 = "3\n";
+    printf("%s\n", multiply(str1, str2));
+
+    char *str3 = "123\n";
+    char *str4 = "456\n";
+    printf("%s\n", multiply(str3, str4));
     return 0;
 }

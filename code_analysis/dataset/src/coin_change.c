@@ -27,18 +27,11 @@ int coinChange(int* coins, int coinsSize, int amount)
 
 int main(int argc, char **argv)
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: ./test 11 1 2 5");
-        exit(-1);
-    }
-
-    int amount = atoi(argv[1]);
-    int i, size = argc - 2;
-    int *coins = malloc(size * sizeof(int));
-    for (i = 0; i < size; i++) {
-        coins[i] = atoi(argv[i + 2]);
-    }
-    printf("%d\n", coinChange(coins, size, amount));
-
+    int coins1[3] = {1,2,5};
+    printf("%d\n", coinChange(coins1, 3, 11));
+    int coins2[1] = {2};
+    printf("%d\n", coinChange(coins2, 1, 3));
+    int coins3[1] = {1};
+    printf("%d\n", coinChange(coins3, 1, 0));
     return 0;
 }

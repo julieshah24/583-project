@@ -29,10 +29,11 @@ static int numDecodings(char* s)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test number\n");
-        exit(-1);
-    }
-    printf("%d\n", numDecodings(argv[1]));
+    char *str1 = "12\n";
+    char *str2 = "226\n";
+    char *str3 = "06\n";
+    printf("%d\n", numDecodings(str1));
+    printf("%d\n", numDecodings(str2));
+    printf("%d\n", numDecodings(str3));
     return 0;
 }

@@ -41,23 +41,29 @@ int** combinationSum(int* candidates, int candidatesSize, int target, int* retur
 
 int main(int argc, char **argv)
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: ./test target n1 n2...\n");
-        exit(-1);
-    }
 
     int i, j, count = 0;
-    int target = atoi(argv[1]);
-    int *nums = malloc((argc - 2) * sizeof(int));
-    for (i = 0; i < argc - 2; i++) {
-        nums[i] = atoi(argv[i + 2]);
-    }
+    int target = 7;
+    int nums[4] = {2,3,6,7};
 
     int *sizes;
-    int **lists = combinationSum(nums, argc - 2, target, &count, &sizes);
+    int **lists = combinationSum(nums, 4, target, &count, &sizes);
     for (i = 0; i < count; i++) {
         for (j = 0; j < sizes[i]; j++) {
             printf("%d ", lists[i][j]);
+        }
+        printf("\n");
+    }
+
+    count = 0;
+    target = 8;
+    int nums2[3] = {2,3,5};
+
+    int *sizes2;
+    int **lists2 = combinationSum(nums2, 3, target, &count, &sizes2);
+    for (i = 0; i < count; i++) {
+        for (j = 0; j < sizes2[i]; j++) {
+            printf("%d ", lists2[i][j]);
         }
         printf("\n");
     }

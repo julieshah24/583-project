@@ -31,10 +31,12 @@ static char* addBinary(char* a, char* b)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test s1 s2\n");
-        exit(-1);
-    }
-    printf("%s\n", addBinary(argv[1], argv[2]));
+    char *str1 = "11";
+    char *str2 = "1";
+    printf("%s\n", addBinary(str1, str2));
+
+    char *str3 = "1010";
+    char *str4 = "1011";
+    printf("%s\n", addBinary(str3, str4));
     return 0;
 }

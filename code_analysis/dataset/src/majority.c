@@ -19,17 +19,9 @@ static int majorityElement(int* nums, int numsSize)
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: ./test target n1 n2...\n");
-        exit(-1);
-    }
-
-    int i, count = argc - 1;
-    int *nums = malloc(count * sizeof(int));
-    for (i = 0; i < count; i++) {
-        nums[i] = atoi(argv[i + 1]);
-    }
-
-    printf("%d\n", majorityElement(nums, count));
+    int nums[3] = {3,2,3};
+    printf("%d\n", majorityElement(nums, 3));
+     int nums1[7] = {2,2,1,1,1,2,2};
+    printf("%d\n", majorityElement(nums1, 7));
     return 0;
 }

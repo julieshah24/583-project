@@ -38,17 +38,22 @@ int* findAnagrams(char * s, char * p, int* returnSize)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
 
-    char *t = argv[1];
-    char *s = argv[2];
+    char *t = "abc";
+    char *s = "cbaebabacd";
     int i, count;
     int *results = findAnagrams(s, t, &count); 
     for (i = 0; i < count; i++) {
         printf("%d ", results[i]);
+    }
+    printf("\n");
+
+    char *t2 = "ab";
+    char *s2 = "abab";
+    int i2, count2;
+    int *results2 = findAnagrams(s, t, &count2); 
+    for (i2 = 0; i2 < count2; i2++) {
+        printf("%d ", results2[i2]);
     }
     printf("\n");
 

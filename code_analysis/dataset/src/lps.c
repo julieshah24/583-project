@@ -37,11 +37,9 @@ int longestPalindromeSubseq(char * s)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test s\n");
-        exit(-1);
-    }
-
-    printf("%d\n", longestPalindromeSubseq(argv[1]));
+    char *str1 = "bbbab\n";
+    char *str2 = "cbbd\n";
+    printf("%d\n", longestPalindromeSubseq(str1));
+    printf("%d\n", longestPalindromeSubseq(str2));
     return 0;
 }

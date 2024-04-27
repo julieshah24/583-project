@@ -36,11 +36,14 @@ int longestCommonSubsequence(char * text1, char * text2)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test s1 s2\n");
-        exit(-1);
-    }
-
-    printf("%d\n", longestCommonSubsequence(argv[1], argv[2]));
+    char *str1 = "abcde\n";
+    char *str2 = "ace\n";
+    printf("%d\n", longestCommonSubsequence(str1, str2));
+    char *str3 = "abc\n";
+    char *str4 = "abc\n";
+    printf("%d\n", longestCommonSubsequence(str3, str4));
+    char *str5 = "abc\n";
+    char *str6 = "def\n";
+    printf("%d\n", longestCommonSubsequence(str5, str6));
     return 0;
 }

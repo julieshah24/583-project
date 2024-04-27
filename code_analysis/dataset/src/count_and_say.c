@@ -65,11 +65,7 @@ static char *countAndSay(int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
-
-    printf("%s\n", countAndSay(atoi(argv[1])));
+    printf("%s\n", countAndSay(1));
+    printf("%s\n", countAndSay(4));
     return 0;
 }

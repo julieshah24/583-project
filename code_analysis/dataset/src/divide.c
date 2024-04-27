@@ -40,10 +40,7 @@ int divide(int dividend, int divisor)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test dividend divisor\n");
-        exit(-1);
-    }
-    printf("%d\n", divide(atoi(argv[1]), atoi(argv[2])));
+    printf("%d\n", divide(10, 3));
+    printf("%d\n", divide(7, -3));
     return 0;
 }

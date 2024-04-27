@@ -52,10 +52,11 @@ static int numDistinct(char* s, char* t)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
-    printf("%d\n", numDistinct(argv[1], argv[2]));
+    char *str1 = "rabbbit\n";
+    char *str2 = "rabbit\n";
+    printf("%d\n", numDistinct(str1, str2));
+    char *str3 = "babgbag\n";
+    char *str4 = "bag\n";
+    printf("%d\n", numDistinct(str3, str4));
     return 0;
 }

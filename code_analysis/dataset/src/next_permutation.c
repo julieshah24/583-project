@@ -42,21 +42,27 @@ static void nextPermutation(int* nums, int numsSize)
 
 int main(int argc, char **argv)
 {
-    if (argc <= 1) {
-        fprintf(stderr, "Usage: ./test ...\n");
-        exit(-1);
-    }
+    int nums[3] = {1,2,3};
+    nextPermutation(nums, 3);
 
-    int i;
-    int *nums = malloc(sizeof(int));
-    for (i = 0; i < argc - 1; i++) {
-        nums[i] = atoi(argv[i + 1]);
-    }
-
-    nextPermutation(nums, argc - 1);
-
-    for (i = 0; i < argc - 1; i++) {
+    for (int i = 0; i < 3; i++) {
         printf("%d ", nums[i]);
+    }
+    putchar('\n');
+
+    int nums1[3] = {3,2,1};
+    nextPermutation(nums1, 3);
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d ", nums1[i]);
+    }
+    putchar('\n');
+
+    int nums2[3] = {1,1,5};
+    nextPermutation(nums2, 3);
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d ", nums2[i]);
     }
     putchar('\n');
 
