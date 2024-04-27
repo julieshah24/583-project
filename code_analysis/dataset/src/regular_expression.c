@@ -20,11 +20,11 @@ static bool isMatch(char *s, char *p)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test string pattern\n");
-        exit(-1);
-    }
+    // if (argc != 3) {
+    //     fprintf(stderr, "Usage: ./test string pattern\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", isMatch(argv[1], argv[2]) ? "true" : "false");
+    printf("%s\n", isMatch("brother", "blother") ? "true" : "false");
     return 0;
 }

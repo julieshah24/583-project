@@ -19,12 +19,13 @@ static void rotate(int** matrix, int matrixSize, int *matrixColSize)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test 3\n");
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test 3\n");
+    // }
 
     int i, j, count = 0;
-    int row_size = atoi(argv[1]);
+    // int row_size = atoi(argv[1]);
+    int row_size = 7;
     int *col_sizes = malloc(row_size * sizeof(int));
     int **matrix = malloc(row_size * sizeof(int *));
     for (i = 0; i < row_size; i++) {

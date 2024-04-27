@@ -44,10 +44,10 @@ int romanToInt (char *s)
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: ./test roman\n");
-        exit(-1);
-    }
-    printf("%d\n", romanToInt(argv[1]));
+    // if (argc < 2) {
+    //     fprintf(stderr, "Usage: ./test roman\n");
+    //     exit(-1);
+    // }
+    printf("%d\n", romanToInt("CX"));
     return 0;
 }

@@ -65,10 +65,10 @@ static char* simplifyPath(char* path)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test path\n");
-        exit(-1);
-    }
-    printf("%s\n", simplifyPath(argv[1]));
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test path\n");
+    //     exit(-1);
+    // }
+    printf("%s\n", simplifyPath("/home//foo/"));
     return 0;
 }

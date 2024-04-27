@@ -41,9 +41,9 @@ int main(int argc, char **argv)
 
     dummy.next = NULL;
     prev = &dummy;
-    for (i = 2; i < argc; i++) {
+    for (i = 2; i < 4; i++) {
         p = malloc(sizeof(*p));
-        int n = atoi(argv[i]);
+        int n = i;
         printf("%d ", n);
         p->val = n;
         p->next = NULL;
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     }
     putchar('\n');
 
-    list = reverseKGroup(dummy.next, atoi(argv[1]));
+    list = reverseKGroup(dummy.next, 1);
     for (p = list; p != NULL; p = p->next) {
         printf("%d ", p->val);
     }

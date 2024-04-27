@@ -26,11 +26,11 @@ static char *convertToTitle(int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", convertToTitle(atoi(argv[1])));
+    printf("%s\n", convertToTitle(97));
     return 0;
 }

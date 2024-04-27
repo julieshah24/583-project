@@ -52,10 +52,10 @@ static bool isScramble(char* s1, char* s2)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: ./test s1 s2\n");
-        exit(-1);
-    }
-    printf("%s\n", isScramble(argv[1], argv[2]) ? "true" : "false");
+    // if (argc != 3) {
+    //     fprintf(stderr, "Usage: ./test s1 s2\n");
+    //     exit(-1);
+    // }
+    printf("%s\n", isScramble("parkour", "karpour") ? "true" : "false");
     return 0;
 }

@@ -88,6 +88,6 @@ static char *intToRoman(int num)
 }
 
 int main(int argc, char **argv) {
-    printf("%s\n", intToRoman(atoi(argv[1])));
+    printf("%s\n", intToRoman(1002));
     return 0;
 }

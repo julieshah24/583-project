@@ -32,23 +32,23 @@ static struct ListNode* reverseBetween(struct ListNode* head, int m, int n)
 
 int main(int argc, char **argv)
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: ./test m n 1 2 3...\n");
-        exit(-1);
-    }
-    int i, count = argc - 3;
+    // if (argc < 3) {
+    //     fprintf(stderr, "Usage: ./test m n 1 2 3...\n");
+    //     exit(-1);
+    // }
+    int i, count = 2;
     struct ListNode dummy;
     struct ListNode *prev = &dummy;
     struct ListNode *p;
     for (i = 0; i < count; i++) {
         p = malloc(sizeof(*p));
-        p->val = atoi(argv[i + 3]);
+        p->val = i;
         p->next = NULL;
         prev->next = p;
         prev = p;
     }
-    int m = atoi(argv[1]);
-    int n = atoi(argv[2]);
+    int m = 1;
+    int n = 2;
     struct ListNode *head = reverseBetween(dummy.next, m, n);
     for (p = head; p != NULL; p = p->next) {
         printf("%d ", p->val);

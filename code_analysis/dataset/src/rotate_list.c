@@ -43,25 +43,27 @@ struct ListNode* rotateRight(struct ListNode* head, int k)
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: ./test k n1 n2...\n");
-        exit(-1);
-    }
+    // if (argc < 2) {
+    //     fprintf(stderr, "Usage: ./test k n1 n2...\n");
+    //     exit(-1);
+    // }
 
     int i;
     struct ListNode *p, *prev, dummy, *list;
+    char arg_v[] = {'1','2','3','4','5'};
     dummy.next = NULL;
     prev = &dummy;
     for (i = 2; i < argc; i++) {
         p = malloc(sizeof(*p));
-        int n = atoi(argv[i]);
+        char temp_str[2] = {arg_v[i], '\0'};  // Create a temporary string
+        int n = atoi(temp_str);
         p->val = n;
         p->next = NULL;
         prev->next = p;
         prev = p;
     }
 
-    list = rotateRight(dummy.next, atoi(argv[1]));
+    list = rotateRight(dummy.next, 3);
     for (p = list; p != NULL; p = p->next) {
         printf("%d ", p->val);
     }

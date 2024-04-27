@@ -45,11 +45,11 @@ static char *shortestPalindrome(char *s)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test string\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test string\n");
+    //     exit(-1);
+    // }
 
-    printf("%s\n", shortestPalindrome(argv[1]));
+    printf("%s\n", shortestPalindrome("malayalam"));
     return 0;
 }

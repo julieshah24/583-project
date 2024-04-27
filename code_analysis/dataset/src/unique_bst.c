@@ -129,12 +129,12 @@ static void dump(struct TreeNode *node)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
     int i, count = 0;
-    struct TreeNode **results = generateTrees(atoi(argv[1]), &count);
+    struct TreeNode **results = generateTrees(3, &count);
     for (i = 0; i < count; i++) {
         dump(results[i]);
         printf("\n");

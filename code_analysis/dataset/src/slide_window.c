@@ -40,16 +40,17 @@ int* maxSlidingWindow(int* nums, int numsSize, int k, int* returnSize)
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: ./test k n1 n2...\n");
-        exit(-1);
-    }
+    // if (argc < 2) {
+    //     fprintf(stderr, "Usage: ./test k n1 n2...\n");
+    //     exit(-1);
+    // }
 
-    int i, size = argc - 2;
-    int k = atoi(argv[1]);
+    int i, size = 35;
+    // int k = atoi(argv[1]);
+    int k = 3;
     int *nums = malloc(size * sizeof(int));
     for (i = 0; i < size; i++) {
-        nums[i] = atoi(argv[i + 2]);
+        nums[i] = i;
     }
 
     int count = 0;

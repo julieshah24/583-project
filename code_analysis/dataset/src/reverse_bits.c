@@ -16,11 +16,11 @@ static uint32_t reverseBits(uint32_t n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
-    printf("%u\n", reverseBits(atoi(argv[1])));
+    printf("%u\n", reverseBits(13241));
     return 0;
 }

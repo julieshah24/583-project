@@ -16,12 +16,13 @@ int removeElement(int *nums, int numsSize, int val)
 int main(int argc, char **argv)
 {
     int i;
-    int *nums = malloc((argc - 2) * sizeof(int));
+    int arg_c = 6;
+    int *nums = malloc((arg_c - 2) * sizeof(int));
     for (i = 0; i < argc - 2; i++) {
-        nums[i] = atoi(argv[i + 2]);
+        nums[i] = i;
     }
 
-    int count = removeElement(nums, argc - 2, atoi(argv[1]));
+    int count = removeElement(nums, arg_c - 2, 2);
     for (i = 0; i < count; i++) {
         printf("%d ", nums[i]);
     }

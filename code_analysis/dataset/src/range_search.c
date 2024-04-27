@@ -57,12 +57,12 @@ static int* searchRange(int* nums, int numsSize, int target, int* returnSize)
 int main(int argc, char **argv)
 {
     int i, count;
-    int *nums = malloc((argc - 2) * sizeof(int));
-    for (i = 0; i < argc - 2; i++) {
-        nums[i] = atoi(argv[i + 2]);
+    int *nums = malloc(4 * sizeof(int));
+    for (i = 0; i < 4; i++) {
+        nums[i] = i;
     }
     
-    int *range = searchRange(nums, argc - 2, atoi(argv[1]), &count);
+    int *range = searchRange(nums, 4, 2, &count);
     printf("%d %d\n", range[0], range[1]);
 
     return 0;

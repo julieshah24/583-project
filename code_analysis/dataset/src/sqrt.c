@@ -78,12 +78,12 @@ int mySqrt(int x)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./test n\n");
-        exit(-1);
-    }
+    // if (argc != 2) {
+    //     fprintf(stderr, "Usage: ./test n\n");
+    //     exit(-1);
+    // }
 
     //printf("%f\n", mySqrt(1.5));//atoi(argv[1])));
-    printf("%d\n", mySqrt(atoi(argv[1])));
+    printf("%d\n", mySqrt(89));
     return 0;
 }

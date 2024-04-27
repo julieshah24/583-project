@@ -37,9 +37,9 @@ int main(int argc, char **argv)
 {
     int i;
     struct ListNode *list, *p, *prev = NULL;
-    for (i = 1; i < argc; i++) {
+    for (i = 1; i < 4; i++) {
         p = malloc(sizeof(*p));
-        p->val = atoi(argv[i]);
+        p->val = i;
         p->next = NULL;
         if (i == 1) {
             list = p;

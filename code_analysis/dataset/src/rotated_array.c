@@ -34,13 +34,14 @@ static int search(int* nums, int numsSize, int target)
 
 int main(int argc, char **argv)
 {
-    int i;
-    int target = atoi(argv[1]);
-    int size = argc - 2;
-    int *nums = malloc(size * sizeof(int));
+    int arg_v[] = {1,4,5,6,2};
+    int target = 3;
+    int i, count = 3;
+    int *nums = malloc(count * sizeof(int));
+    int size = 3;
 
-    for (i = 0; i < argc - 2; i++) {
-        nums[i] = atoi(argv[i + 2]);
+    for (i = 0; i < count; i++) {
+        nums[i] = arg_v[i + 2];
     }
     printf("%d\n", search(nums, size, target));
     return 0;

@@ -26,16 +26,18 @@ static void rotate(int* nums, int numsSize, int k)
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: ./test k n1 n2...\n");
-        exit(-1);
-    }
+    // if (argc < 2) {
+    //     fprintf(stderr, "Usage: ./test k n1 n2...\n");
+    //     exit(-1);
+    // }
 
-    int k = atoi(argv[1]);
+    int arg_v[] = {1,4,5,6,2};
+    int k = 3;
     int i, count = argc - 2;
     int *nums = malloc(count * sizeof(int));
+
     for (i = 0; i < count; i++) {
-        nums[i] = atoi(argv[i + 2]);
+        nums[i] = arg_v[i + 2];
     }
 
     rotate(nums, count, k);

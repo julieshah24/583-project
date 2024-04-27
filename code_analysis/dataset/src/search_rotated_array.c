@@ -38,12 +38,12 @@ static bool search(int* nums, int numsSize, int target)
 int main(int argc, char **argv)
 {
     int i;
-    int target = atoi(argv[1]);
-    int size = argc - 2;
+    int target = 2;
+    int size = 4;
     int *nums = malloc(size * sizeof(int));
 
     for (i = 0; i < argc - 2; i++) {
-        nums[i] = atoi(argv[i + 2]);
+        nums[i] = i;
     }
     printf("%d\n", search(nums, size, target));
     return 0;
