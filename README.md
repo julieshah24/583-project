@@ -5,16 +5,28 @@ Large Language Models (LLMs) are seeing increasing use in code-related domains d
 
 ---
 
-# Initial Set-up:
-1. Navigate to the code_analysis project level directory
-2. Run mkdir build && cd build	
-3. run cmake ..
-4. Run make
+# Initial Set-up
+### Building the pass
+Navigate to the code_analysis directory and run the following:
+``` bash
+mkdir build && cd build	
+cmake ..
+make
+```
 
-After making changes to AnalysisPass, cd to the build folder and run make
-to recompile the changes.
+To recompile after making changes to AnalysisPass, cd to the build folder and run 
+``` bash
+make 
+```
 
-To be able to run the model:
-in your terminal, run pip install replicate
-Go to https://replicate.com/account/api-tokens and get a token
-In your terminal, run export REPLICATE_API_TOKEN=<paste-your-token-here>
+### Authenticating and using Llama 3
+1. In your terminal, run 
+``` bash
+pip install replicate
+```
+2. Go to https://replicate.com/account/api-tokens and copy your token
+3. In your terminal, run
+``` bash
+export REPLICATE_API_TOKEN=<paste-your-token-here>
+```
+Note that this token is unique to your GitHub account and has a limited on the number of times you can run it, so we recommend commenting out any lines in the evaluate scripts that run the model until you are ready to do so.
