@@ -1,5 +1,0 @@
-Based on the provided information, here are the ideal, real, clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
-
-`-O3 -funroll-loops -fomit-frame-pointer -ffast-math -fno-strict-aliasing -fno-builtin-memcmp -fno-builtin-memmove -fno-builtin-memcpy`
-
-Note that the flags are based on the provided information and may not be the optimal set of flags for the specific use case.

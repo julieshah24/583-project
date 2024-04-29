@@ -1,3 +1,0 @@
-Based on the given profile information, the ideal real clang llvm optimization compilation flags are:
-
-`-O3 -ipo -xhost -fopenmp -fPIC -std=c99 -pedantic -Wno-unused-function -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-parentheses -Wno-switch -Wno-ignored-qualifiers -Wno-missing-field-initializers -Wno-missing-braces -Wno-missing-terminate -Wno-missing-endif -Wno-missing-else -Wno-missing-ifdef -W

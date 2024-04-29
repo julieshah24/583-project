@@ -1,5 +1,0 @@
-Based on the provided profile information, the ideal compilation flags for the.c file are:
-
--O2 -mllvm -unroll-runtime -mllvm -inline-threshold=1000 -mllvm -reduction-type=none -mllvm -loop-unroll-threshold=1000 -mllvm -loop-interchange-threshold=1000 -mllvm -unroll-threshold=1000 -mllvm -unroll-runtime-threshold=1000 -mllvm -unroll-threshold=1000 -mllvm -unroll-runtime-threshold=1000
-
-These flags are based on the provided profile information, including

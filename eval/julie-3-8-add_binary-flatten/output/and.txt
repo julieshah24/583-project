@@ -1,7 +1,0 @@
-Based on the profile information, here are the ideal, real, and clang/llvm optimization compilation flags separated by whitespace and nothing else:
-
-Ideal: -O3 -fomit-frame-pointer -funroll-loops -ffast-math
-
-Real: -O2 -fomit-frame-pointer -funroll-loops -ffast-math
-
-Clang/Llvm: -O2 -fomit-frame-pointer -funroll-loops -ffast-math

@@ -1,3 +1,0 @@
-Based on the provided profile information, the ideal real clang llvm optimization compilation flags are:
-
--O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmodulo-sched -fstrict-aliasing -fwrapv -fPIC -fsanitize=address -fsanitize=undefined -ftrapv -fstack-protector -fstack-check -fno-strict-aliasing -fno-builtin -fno-omit-frame-pointer -fno-strict-aliasing -fno-builtin -fno-omit-frame-pointer -fno-strict-aliasing -fno-builtin

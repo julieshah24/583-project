@@ -1,5 +1,0 @@
-Based on the provided profile information, I recommend the following ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
-
-`-O3 -std=c11 -fPIC -fwrapv -fno-strict-aliasing -fno-omit-frame-pointer -g -O3 -fno-fast-math -fno-ipa-sra -fno-ipa-bit-reset -fno-ipa-split -fno-ipa-alias -fno-ipa-pure-const`
-
-Please note that these flags are tailored to the specific profile information provided and may not be suitable for all use cases.

@@ -1,7 +1,0 @@
-Based on the profile information, the ideal compilation flags for the.c file are:
-
--O3 -fprofile-generate -fprofile-correction
-
-These flags enable aggressive optimization, profile-guided optimization, and profile-correction optimization.
-
-Note that the flags may vary depending on the specific version of the compiler being used.

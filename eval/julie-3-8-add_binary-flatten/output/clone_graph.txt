@@ -1,3 +1,0 @@
-Based on the profile information, I recommend the following ideal real clang llvm optimization compilation flags:
-
--O2 -mllvm -unroll-loops -mllvm -inline-threshold=1000 -mllvm -function-inlining -mllvm -scan-dead-code -mllvm -omit-frame-pointer -mllvm -enable-ivopts -mllvm -enable-vrp -mllvm -enable-slp -mllvm -enable-prec-div -mllvm -enable-prec-sqrt -mllvm -enable-prec-rem -mllvm -enable-prec-div-rem -mllvm -enable-prec-sqrt-div

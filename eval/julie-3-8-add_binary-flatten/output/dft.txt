@@ -1,4 +1,0 @@
-Based on the profile information, I would recommend the following ideal real clang llvm optimization compilation flags:
-
-```
--O3 -fomit-frame-pointer -funroll-loops -finline-functions -fpeel-loops -fno-strict-aliasing -fno-strict-overflow -ftrapv -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS=1 -Wdate-time -Wformat-security -Wformat -Winit-self -Wmissing-include-dirs -Wno-comment -Wno-overflow -Wno-sign-compare -Wno-switch -Wno-trigraphs -

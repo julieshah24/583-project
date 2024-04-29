@@ -1,7 +1,10 @@
 #!/bin/bash
-# Script for Group 2 EECS 583 W24
+# Evaluate script
+# This runs all stages of the project and prints metrics to a running CSV file
+# This can run on its own but is built to be called within evaluate_all_csv.sh
+# Usage: sh evaluate_csv.sh <benchmark_name>
+# E.g:   sh evaluate_csv.sh simple
 
-# Ensure that the path to the library and pass name are correct.
 PATH2LIB="./code_analysis/build/analysis_pass/AnalysisPass.so"
 PASS=analysis
 

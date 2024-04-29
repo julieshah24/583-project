@@ -1,4 +1,0 @@
-Here are the ideal, real, clang, and LLVM optimization and compilation flags separated by whitespace and nothing else:
-
-```
--O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fmerge-all-constants -fno-ident-logical-blocks -fno-strict-overflow -fno-trapping-math -fno-ira-share-feedback-diamonds -fno-ira-undo-loops -fno-ira-undo-conversions -fno-ira-undo-calls -fno-ira-undo-returns -fno-ira-undo-

@@ -85,41 +85,9 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
             uint64_t CyclesPerIteration = 10;
             uint64_t TotCycles = HeaderFreq * CyclesPerIteration;
 
-            // errs() << "Loop in function " << F.getName() << " with header block " << Header->getName()
-            //        << " executes approximately " << HeaderFreq << " times.\n"
-            //        << " Estimated total cycles (assuming " << CyclesPerIteration << " cycles/iteration): " << TotCycles << "\n";
-            
-            // errs() << "LoopID: " << Header << " ";
-            //errs() << "LoopID: " << (*loop_iter)->getHeader()->getName() << " ";
-            //errs() << "Location: " << File.str() << ":" << LineNo << " ";
             totalLoopExecutions += HeaderFreq;
             totalLoopCycles += TotCycles;
             totalCyclesPerIteration += CyclesPerIteration;
-            // errs() << "Executions: " << HeaderFreq << " ";
-            // errs() << "Cycles: " << TotCycles << " ";
-            // errs() << "Cycles per Execution: " << CyclesPerIteration << "\n";
-            // Get debug location information
-            //if (const DebugLoc &DL = Header->getTerminator()->getDebugLoc()) {
-            // errs() << "going through loop info";
-            //unsigned LineNo = DL.getLine();
-            //StringRef File = DL->getFilename();
-
-            //   // Calculate loop trip count and total execution count
-            //   std::optional<unsigned> TripCount = SE.getSmallConstantTripCount(*loop_iter);
-            //   errs() << TripCount;
-            //   std::optional<long unsigned int> BlockCount = bfi.getBlockProfileCount(Header);
-            //   double TotalExecutions = TripCount.has_value() && BlockCount ? TripCount.value() * BlockCount.value() : 0;
-
-            //   // Estimate the total clock cycles (simple estimation: 10 cycles per iteration for now)
-            //   double TotalCycles = TotalExecutions * 10;  // Simplified assumption
-            
-
-            //   // Print loop information
-            //   errs() << "LoopID: " << (*loop_iter)->getHeader()->getName() << " ";
-            //   //errs() << "Location: " << File.str() << ":" << LineNo << " ";
-            //   errs() << "Executions: " << TotalExecutions << " ";
-            //   errs() << "Cycles: " << TotalCycles << "\n";
-            // //}
         }
 
         // Open a file to write the prompt to with this profile data
@@ -149,33 +117,6 @@ struct AnalysisPass : public PassInfoMixin<AnalysisPass> {
 
         // Close the file
         outFile.close();
-
-        // outFile << "The function named \'";
-        // outFile << (std::string)funcName;
-        // outFile << "\' executes ";
-        // outFile << functionFrequency;
-        // outFile << " times. It has ";
-        // outFile << numBBs;
-        // outFile << " basic blocks, where on average each basic block executes ";
-        // double avgBBFrequency = (double)(totalBBFrequency) / (double)(numBBs);
-        // outFile << avgBBFrequency;
-        // outFile << " times, has ";
-        // double avgBBMemAccess = (double)(totalMemAccess) / (double)(numBBs);
-        // outFile << avgBBMemAccess;
-        // outFile << " memory accesses, ";
-        // double avgBBBiasedBranches = (double)(totalBiasedBranches) / (double)(numBBs);
-        // outFile << avgBBBiasedBranches;
-        // outFile << " biased branches, and ";
-        // double avgBBUnbiasedBranches = (double)(totalUnbiasedBranches) / (double)(numBBs);
-        // outFile << avgBBUnbiasedBranches << " unbiased branches. It has ";
-        // outFile << numLoops << " loops, where on average each loop executes ";
-        // double avgExecutionsPerLoop = (double)(totalLoopExecutions) / (double)(numLoops);
-        // outFile << avgExecutionsPerLoop << " times and has ";
-        // // double avgCyclesPerLoop = (double)(totalLoopCycles) / (double)(numLoops);
-        // // outFile << avgCyclesPerLoop << " total cycles, and ";
-        // double avgCyclesPerLoopIteration = (double)(totalCyclesPerIteration) / (double)(numLoops);
-        // outFile << avgCyclesPerLoopIteration << " cycles per loop iteration.\n";
-        // outFile << "Based on the profile information presented for the .c file, name relevant llvm optimization compiler flags separated by whitespace and no other text.";
         }
         
         return PreservedAnalyses::all();

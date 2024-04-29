@@ -1,3 +1,0 @@
-Based on the provided profile information, here are the ideal, real, clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
-
-`-O3 -ipo -xHOST -INLINE=8 -fomit-frame-pointer -ffunction-sections -fdata-sections -mno-ieee-fp -mno-check-stop -mno-branch-fp -mno-ieee-fp -mno-check-stop -mno-branch-fp -mno-ieee-fp -mno-check-stop -mno-branch-fp -mno-ieee-fp -mno-check-stop -mno

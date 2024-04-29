@@ -1,3 +1,0 @@
-Based on the provided profile information, here are the ideal real Clang LLVM optimization compilation flags separated by whitespace and nothing else:
-
--O2 -fno-omit-frame-pointer -funroll-loops -finline-functions -fpeephole -feliminate-unused-debug-symbols -fno-strict-aliasing -fno-delete-null-pointer-checks -fno-strict-overflow -fno-trapping-math -fno-math-errno -fno-signed-zeros -fno-denormal-float -fno-inf-fp -fno-nan-fp -fno-rounding-math -f

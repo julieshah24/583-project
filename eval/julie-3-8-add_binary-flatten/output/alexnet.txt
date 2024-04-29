@@ -1,9 +1,0 @@
-Based on the provided information, here are the ideal, real, clang, and llvm optimization compilation flags separated by whitespace and nothing else:
-
-Ideal flags: -O3 -march=native -mtune=native
-
-Real flags: -O2 -march=x86-64 -mtune=generic
-
-Clang flags: -O2 -march=x86-64 -mtune=generic -fomit-frame-pointer
-
-LLVM flags: -O2 -march=x86-64 -mtune=generic -fomit-frame-pointer -fPIC

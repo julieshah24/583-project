@@ -1,3 +1,0 @@
-Based on the profile information, the ideal compilation flags are:
-
--O3 -DNDEBUG -g -fno-omit-frame-pointer -fno-inline-functions -fno-move-all-movables -fno-reorder-functions -fno-toplevel-reorder -fno-unit-at-a-time -fno-omit-frame-pointer -fno-omit-leaf-functions -fno-omit-prototypes -fno-omit-externs -fno-omit-stdcall-prototypes -fno-omit-stdcall-externs -fno-omit-stdcall-prototypes -fno-omit-stdcall-

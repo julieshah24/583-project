@@ -1,3 +1,0 @@
-Based on the provided profile information, I recommend the following ideal real clang llvm optimization compilation flags, separated by whitespace and nothing else:
-
--O2 -DNDEBUG -g -O2 -flto -fPIC -m64 -std=c++11 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wunreachable-code -Wuninitialized -Wdelete-non-virtual-dtor -Wctor-dtor-merge -Wzero-as-null-pointer-constant -Wfloat-conversion -Wsizeof-pointer-memaccess -Wsizeof-pointer-arithmetic -Wuninitialized -Wunreferenced -Wunused-variable -

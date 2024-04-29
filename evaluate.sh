@@ -1,10 +1,9 @@
 #!/bin/bash
-# Run script for Group 2 EECS 583 W24
-# Copy run script into benchmark folder
-# Usage: sh run.sh <benchmark_name>
-# where <benchmark_name> = simple OR anagram OR compress
+# Demo evaluate script
+# This runs all stages of the project and prints steps to terminal
+# Usage: sh evaluate.sh <benchmark_name>
+# E.g:   sh evaluate.sh simple
 
-# ACTION REQUIRED: Ensure that the path to the library and pass name are correct.
 PATH2LIB="./code_analysis/build/analysis_pass/AnalysisPass.so"
 PASS=analysis
 

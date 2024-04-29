@@ -1,3 +1,0 @@
-Based on the provided profile information, the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else are:
-
--O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-exceptions -fno-math-errno -fno-trapping-math -fno-tree-vrp -fno-tree-pre -fno-tree-dce -fno-tree-sra -fno-tree-sce -fno-tree-sls -fno-tree-sra -fno-tree-sce -fno-tree-sls -fno-tree-sra -fno

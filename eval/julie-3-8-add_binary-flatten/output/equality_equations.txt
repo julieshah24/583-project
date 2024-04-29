@@ -1,4 +1,0 @@
-Based on the provided information, here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
-
-```
--O2 -fomit-frame-pointer -funroll-loops -finline-functions -fpeephole -fdevirtualize -fcaller-saves -fstrict-aliasing -faligned-new -ftrapv -fno-strict-overflow -fno-strict-aliasing -fno-strict-overflow -fno-strict-aliasing -fno-strict-overflow -fno-strict-aliasing -fno-strict-overflow -fno-strict-

@@ -1,3 +1,0 @@
-Based on the provided information, I recommend the following ideal real clang llvm optimization compilation flags:
-
--O2 -fomit-frame-pointer -fPIC -fprefetch-loops -fstrict-aliasing -fstrict-overflow -ftrapv -fused-literals -fexpensive-constants -fno-merge-all-constants -fno-emit-merge-goto -fno-emit-merge-goto -fno-emit-merge-goto -fno-emit-merge-goto -fno-emit-merge-goto -fno-emit-merge-goto -fno-emit-

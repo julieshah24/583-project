@@ -1,5 +1,6 @@
 #!/bin/bash
-# Run script for Group 2 EECS 583 W24 Final Project
+# This runs all stages of the project and prints metrics to a running CSV file
+# For every test file in the code_analysis/dataset/src folder
 # Usage: sh evaluate_all.sh
 
 PATH2LIB="./code_analysis/build/analysis_pass/AnalysisPass.so"

@@ -1,5 +1,0 @@
-Based on the provided profile information, here are the ideal, real, clang, and LLVM optimization compilation flags, separated by whitespace and nothing else:
-
-`-O3 -march=native -mtune=native -flto -fno-strict-aliasing -fno-omit-frame-pointer -fno-optimize-sibling-calls`
-
-Please note that these flags are based on the provided profile information and may not be optimal for all use cases.

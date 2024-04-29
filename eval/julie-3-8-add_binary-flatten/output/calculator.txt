@@ -1,7 +1,0 @@
-Based on the provided information, here are the ideal, real, Clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
-
- Ideal: -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-delete-null-pointer-checks -fno-zero-initialized-in-bss
-
- Real: -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-delete-null-pointer-checks -fno-zero-initialized-in-bss
-
- Clang: -O2 -fomit-frame-pointer -

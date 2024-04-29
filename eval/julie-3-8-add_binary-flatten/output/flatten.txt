@@ -1,5 +1,0 @@
-Based on the provided profile information, here are the ideal real clang llvm optimization compilation flags separated by whitespace and nothing else:
-
--O2 -fomit-frame-pointer -funroll-loops -ffast-math -fno-strict-aliasing -fno-alias -fno-delete-null-pointer-checks -fno-keep-static-consts -fno-strict-overflow -fno-trapping-math -fno-weak-link -fno-weak-link-optimizations
-
-Note that these flags are based on the provided profile information and may not be optimal for all use cases.

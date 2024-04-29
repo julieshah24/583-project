@@ -1,5 +1,0 @@
-Here are the ideal, real, Clang, and LLVM optimization compilation flags separated by whitespace and nothing else:
-
-`-O3 -march=native -mtune=native -flto -fwhole-program -ffunction-sections -fdata-sections -fPIC -fvisibility=hidden -fno-strict-aliasing -fno-delete-null-pointer-checks -fno-omit-frame-pointer -fomit-frame-pointer`
-
-Please note that these flags may not be optimal for your specific use case.

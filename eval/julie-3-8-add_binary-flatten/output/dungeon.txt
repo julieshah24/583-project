@@ -1,4 +1,0 @@
-Here are the ideal, real, clang, and llvm optimization compilation flags separated by whitespace and nothing else:
-
-```
--O3 -ipo -xhost -fno-omit-frame-pointer -fno-omit-bp -fno-strict-aliasing -fno-tree-loop-im -fno-tree-reassoc -fno-tree-pre -fno-tree-dce -fno-tree-fre -fno-tree-prune-erase -fno-tree-simplify-ccp -fno-tree-simplify-icf -fno-tree-simplify-phi -fno-tree-simplify-sccp -fno-tree
