@@ -11,7 +11,7 @@ def read_csv_column_by_column(file_path):
         column_data = df[column]
         print(f"Column: {column}")
         print(column_data)
-        print()  # Add a newline for better readability between columns
+        print()
 
 
 def count_flags_in_column(file_path, column_name):
@@ -24,7 +24,8 @@ def count_flags_in_column(file_path, column_name):
         return
     
     # Concatenate all rows in the column into a single string
-    all_flags = ' '.join(df[column_name].dropna())  # dropna() to avoid errors with NaN values
+    # dropna() to avoid errors with NaN values
+    all_flags = ' '.join(df[column_name].dropna())  
     
     # Split the string into a list of flags
     flags_list = all_flags.split()
@@ -37,13 +38,14 @@ def count_flags_in_column(file_path, column_name):
         print(f"{flag}: {count}")
 
 
-# Specify the path to your CSV file
+# path to CSV file
 file_path = 'results.csv'
 
-# Call the function with the path to your CSV file
+# this will print out the data column by column
 read_csv_column_by_column(file_path)
 
-column_name = 'Flags Used'  # Change this to the name of your column that contains the flags
+# the name of column that contains the flags
+column_name = 'Flags Used'  
 
-# Call the function
+# this will only look at flags 
 count_flags_in_column(file_path, column_name)
