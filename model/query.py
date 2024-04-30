@@ -44,7 +44,7 @@ def query_llama(prompt):
     
     input = {'prompt': prompt, 'prompt_template': '<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'}
    
-    output = replicate.run('meta/meta-llama-3-8b-instruct', # can replace 8 with 70
+    output = replicate.run('meta/codellama-13b:511fc67df70ee2d584375b6f1463d8d7d9ca7e6131e0f0a879d32d99bce17351', # can replace 8 with 70
             input=input)
 
     return output

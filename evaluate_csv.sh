@@ -80,7 +80,7 @@ rm -rf final_flags.txt
 end=$(date +%s) # ended LLM compiler analysis
 
 # echo "Time taken: $((end-start)) seconds."
-output_file="output.csv"
+output_file="output2.csv"
 
 compile_and_time() {
     local opt_level=$1
@@ -104,7 +104,7 @@ compile_and_time() {
     local exec_time=$(echo "$exec_end - $exec_start" | bc)
 
     # echo "$instruction_count,$compile_time,$exec_time"
-    echo "$instruction_count"
+    echo "$instruction_count, $exec_time"
 }
 
 cd ..

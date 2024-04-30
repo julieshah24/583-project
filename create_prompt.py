@@ -24,7 +24,7 @@ def create_prompt(folder_name):
     out_file_name = "./model/prompts/" + folder_name + ".txt"
     with open(out_file_name, 'w') as out_file:
         out_file.write("Based on the following profile information presented for a .c file, name ideal real clang llvm optimization compilation flags separated by whitespace and nothing else. ")
-        for rank in range(3):
+        for rank in range(4):
             if rank < len(data):
                 fdata = data[sorted_indices[rank]]
                 func_name = str(fdata[0])

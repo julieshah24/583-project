@@ -1,0 +1,401 @@
+add_binary,180,180,180, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fstrict-aliasing -fno-strict-aliasing -fno-strict-aliasing 
+add_complex,83,83,83, -O3 -fomit-frame-pointer -fno-strict-aliasing -fwrapv 
+add_ints,71,71,71, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants 
+add_two_numbers,594,594,594, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+alexnet,1973,3717,1973, -O3 -O2 -O2 -fomit-frame-pointer -O2 -fomit-frame-pointer 
+anagram,978,1240,988, -fomit-frame-pointer -finline-functions -funroll-loops -fomit-frame-pointer -finline-functions -funroll-loops -fomit-frame-pointer 
+anagrams,364,366,364, -O2 -O2 
+anagrams_in_string,331,331,331, -O3 -funroll-loops -fomit-frame-pointer 
+and,89,89,94, -O3 -fomit-frame-pointer -funroll-loops -ffast-math -O2 -fomit-frame-pointer -funroll-loops -ffast-math -O2 -fomit-frame-pointer -funroll-loops -ffast-math 
+assembler,684,746,689, -O2 -fno-omit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-math-errno -fno-signed-zeros -fno-rounding-math 
+atoi,186,206,186, -O2 -fstack-protector-strong 
+backtrack,178,372,237, -fno-strict-aliasing -fno-omit-frame-pointer 
+balanced_bst,154,154,159, -O3 -O2 -fno-strict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing -fno-omit-frame-pointer 
+basic_malloc,418,421,427, -O3 -fno-strict-aliasing -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fno-math-errno -fno-signed-zeros -fno-trapping-math -fstack-protector-strong 
+benchmark4,205,307,187, 
+bfs,460,466,499, -O3 -fstack-protector -fno-strict-aliasing -fno-omit-frame-pointer 
+binary_search,162,166,162, -O2 -fomit-frame-pointer -fstrict-aliasing 
+binary_tree_build,376,376,379, -O3 -fno-strict-aliasing -fwrapv 
+bst_bfs,278,281,287, -O3 -fno-omit-frame-pointer -fno-omit-frame-pointer 
+bst_convert,164,164,173, -funroll-loops -fomit-frame-pointer -ffast-math -fno-strict-aliasing 
+bst_depth,80,80,80, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fmerge-all-constants -fno-trapping-math 
+bst_inorder_traversal,71,71,71, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-math-errno -fno-trapping-math 
+bst_lca,108,110,108, -O2 
+bst_max_path,175,175,175, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants 
+bst_postorder,152,159,188, -funroll-loops -fomit-frame-pointer -finline-functions 
+bst_preorder,146,150,146, -O2 
+bst_right,243,243,246, -O2 -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing -finline-functions 
+bst_zigzag,288,288,293, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-strict-aliasing 
+calculator,236,240,236, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O2 -fomit-frame-pointer 
+candy,272,272,272, -O3 -fomit-frame-pointer 
+climb_stairs,85,85,85, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-strict-aliasing 
+clone_graph,189,189,189, -O2 
+coin_change,220,274,274, -O3 
+combination_sum,320,320,323, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing 
+combinations,304,304,271, 
+common_prefix,128,137,137, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing 
+consec_seq,260,260,260, -O3 
+container,145,145,183, -fno-strict-aliasing -fno-omit-frame-pointer 
+copy_list,225,225,225, -O3 
+count_and_say,215,246,261, -fwrapv -fno-strict-aliasing -fno-omit-frame-pointer -O3 
+course_schedule,184,184,317, -fomit-frame-pointer -funroll-loops -finline-functions 
+decode_ways,89,89,89, -O2 -funroll-loops -fomit-frame-pointer -O2 -funroll-loops -fomit-frame-pointer -O2 -funroll-loops -fomit-frame-pointer 
+dft,753,756,760, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+display_guts,105,109,109, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-strict-aliasing 
+distinct_subseq,289,303,0, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fwrapv -fsanitize=address -fsanitize=undefined -fstack-protector -fno-strict-aliasing -fno-builtin -fno-omit-frame-pointer -fno-strict-aliasing -fno-builtin -fno-omit-frame-pointer -fno-strict-aliasing -fno-builtin 
+divide,160,160,168, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer -fno-trapping-math 
+dungeon,217,217,222, -O3 -fno-omit-frame-pointer -fno-strict-aliasing 
+edit_distance,182,80,269, -funroll-loops -fomit-frame-pointer -ffast-math -fno-strict-aliasing 
+equality_equations,228,228,228, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-strict-aliasing -fno-strict-aliasing 
+eval_rpn,190,190,292, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-trapping-math -fno-math-errno -fno-signed-zeros 
+fc_forward,104,105,104, -O2 -fomit-frame-pointer -fno-strict-aliasing 
+findmaximum,190,191,146, -fomit-frame-pointer 
+flatten,164,164,169, -O2 -fomit-frame-pointer -funroll-loops -ffast-math -fno-strict-aliasing -fno-trapping-mathadd_binary,180,180,180, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing -fno-math-errno 
+add_complex,83,83,83, -O3 -fomit-frame-pointer 
+add_ints,71,71,71, -O2 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fstack-protector 
+add_two_numbers,594,594,600, -O3 -fomit-frame-pointer -fno-strict-aliasing -fno-stack-protector -fno-omit-frame-pointer 
+alexnet,1973,3717,1148, -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+anagram,978,1240,988, -fomit-frame-pointer -funroll-loops -finline-functions -fomit-frame-pointer -funroll-loops -finline-functions -fomit-frame-pointer -funroll-loops -finline-functions 
+anagrams,364,366,364, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+anagrams_in_string,331,331,331, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fno-strict-aliasing -fno-trapping-math -fwrapv -fstrict-aliasing -fstack-protector -fstack-protector-all 
+and,89,89,89, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing 
+assembler,684,746,751, -O3 -ffast-math -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+atoi,186,206,215, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstack-protector -fstack-protector-all 
+backtrack,178,372,377, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -ffast-math -fno-signed-zeros -fno-trapping-math -fno-signed-zeros -fno-trapping-math 
+balanced_bst,154,154,159, -O3 -ffast-math -fomit-frame-pointer -funroll-loops 
+basic_malloc,418,421,353, -fomit-frame-pointer -fstrict-aliasing -finline-functions -funroll-loops 
+benchmark4,205,307,307, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-semantic-interposition 
+bfs,460,466,494, -fomit-frame-pointer -funroll-loops -finline-functions 
+binary_search,162,166,166, -O2 -O3 -fomit-frame-pointer -fwrapv 
+binary_tree_build,376,376,366, -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-strict-aliasing 
+bst_bfs,278,281,281, -O3 -fno-math-errno -fno-trapping-math 
+bst_convert,164,164,164, -O3 -O3 -O3 
+bst_depth,80,80,113, -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+bst_inorder_traversal,71,71,71, -O2 
+bst_lca,108,110,110, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fno-strict-aliasing 
+bst_max_path,175,175,175, -O3 -O2 -O3 
+bst_postorder,152,159,152, -O3 -O2 -fomit-frame-pointer -funroll-loops -finline-functions 
+bst_preorder,146,150,206, -fomit-frame-pointer -funroll-loops -finline-functions -fstack-protector-all -fno-strict-aliasing -fwrapv 
+bst_right,243,243,243, -O2 -funroll-loops -fomit-frame-pointer -finline-functions -fstrict-aliasing 
+bst_zigzag,288,288,296, -O2 -O3 -Oz -Ofast -ffast-math -fno-omit-frame-pointer 
+calculator,236,240,236, -O2 -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing 
+candy,272,272,280, -O3 -fno-omit-frame-pointer 
+climb_stairs,85,85,85, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-trapping-math -fwrapv 
+clone_graph,189,189,189, -O3 -fomit-frame-pointer -fno-strict-aliasing 
+coin_change,220,274,280, -O3 -fno-strict-aliasing -fno-omit-frame-pointer -fno-omit-frame-pointer -fno-omit-frame-pointer 
+combination_sum,320,320,320, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fomit-frame-pointer -fstrict-aliasing -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fomit-frame-pointer -fstrict-aliasing 
+combinations,304,304,271, 
+common_prefix,128,137,128, -O2 -fomit-frame-pointer -funroll-loops -finline-functions 
+consec_seq,260,260,372, 
+container,145,145,145, -O3 -funroll-loops -fomit-frame-pointer 
+copy_list,225,225,269, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing 
+count_and_say,215,246,266, -O3 -ffast-math -fomit-frame-pointer -fwrapv -fno-strict-aliasing -fno-trapping-math -fno-omit-frame-pointer 
+course_schedule,184,184,327, 
+decode_ways,89,89,89, -O2 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fstrict-aliasing 
+dft,753,756,586, -ffast-math -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing 
+display_guts,105,109,105, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-stack-protector -fno-trapping-math -fno-signed-zeros -fno-strict-aliasing 
+distinct_subseq,289,303,324, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fwrapv 
+divide,160,160,160, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+dungeon,217,217,217, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing -fwrapv 
+edit_distance,182,80,80, -O3 -funroll-loops -fomit-frame-pointer -finline-functions 
+equality_equations,228,228,255, -funroll-loops -fomit-frame-pointer 
+eval_rpn,190,190,292, -fomit-frame-pointer -fno-strict-aliasing -fwrapv 
+fc_forward,104,105,105, -O3 
+findmaximum,190,191,146, -funroll-loops -fomit-frame-pointer -fno-strict-aliasing 
+flatten,164,164,164, -O3 -fno-strict-aliasing -fno-omit-frame-pointer -fomit-frame-pointer -fno-math-errno -fno-trapping-math 
+four_sum,369,372,372, -O3 
+fraction,284,284,284, -O3 -fno-strict-aliasing -fno-math-errno -fno-trapping-math 
+full_pyramid_nums,149,441,441, -O3 -fomit-frame-pointer -fno-strict-aliasing -fwrapv -fstack-protector-strong 
+full_pyramid_stars,122,122,121, -O2 -O3 -fomit-frame-pointer -fno-strict-aliasing -fwrapv 
+gas_station,80,80,80, -O3 -O2 -O3 -fomit-frame-pointer 
+graph,947,1050,962, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O3 
+gray_code,152,152,154, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fwrapv 
+hamming_weight,80,80,106, 
+happy_number,118,120,120, -O3 -fomit-frame-pointer -funroll-loops 
+hello,79,79,79, -O3 
+insertion,285,149,48180, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fwrapv -fsanitize=undefined -fno-omit-frame-pointer -fno-strict-aliasing -fsanitize=undefined 
+insertionsort,155,155,144, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fstrict-aliasing 
+interleaving_string,78,78,0, -fomit-frame-pointer -funroll-loops -finline-functions -fprofile-use -fstrict-aliasing -fstack-protector 
+intersection,131,131,136, -O3 -fomit-frame-pointer -funroll-loops -ffast-math -fno-strict-aliasing 
+invert_binary_tree,99,99,133, -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer 
+ip_addr,233,283,283, -O3 
+isomorphic_strings,80,80,81, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fmerge-all-constants -fno-math-errno -fno-trapping-math -fno-strict-aliasing -fno-omit-frame-pointer 
+jump_game,168,168,168, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fmerge-all-constants -fno-trapping-math -fno-math-errno 
+justification,397,488,486, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fstack-protector -fno-strict-aliasing -fno-omit-frame-pointer 
+kth_bst,139,141,141, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-math-errno -fno-stack-protector 
+kth_elem,217,217,217, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+largest_number,217,217,217, -O3 -funroll-loops -fomit-frame-pointer 
+lcs,249,254,254, -O3 
+lis,356,364,364, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fno-strict-aliasing -fno-strict-aliasing 
+longest_substring_without_repeat,320,439,439, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-math-errno -fno-signed-zeros -fno-math-errno -fno-signed-zeros 
+lps,180,183,174, -Ofast -Og -O2 -O3 -Oz -Os 
+lru_cache,532,781,574, 
+majority,85,85,142, -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+matrix_mult_rec,244,244,244, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+max_gap,339,343,343, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fstack-protector -fno-strict-aliasing -fno-stack-protector 
+max_subarray,80,80,80, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+median_of_two_sorted_array,100,100,100, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fomit-frame-pointer -finline-functions 
+merge_intervals,303,303,365, -fomit-frame-pointer -funroll-loops 
+merge_lists,125,125,149, -fomit-frame-pointer -funroll-loops -finline-functions 
+mergesort,314,314,314, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+mini_size,149,149,154, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer 
+minimum,146,146,160, 
+missing_positive,165,165,165, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fmerge-all-constants -fstrict-aliasing 
+mult_float,71,71,71, -O3 -funroll-loops -fomit-frame-pointer -finline-functions 
+multiply_strings,206,275,275, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fmerge-all-constants -fno-strict-aliasing 
+n_queens,456,478,478, -O3 
+next_permutation,130,130,130, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+outer_product,432,432,439, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-omit-frame-pointer 
+palindrome_partition,365,378,365, -O3 -O2 
+parenthesis,179,220,228, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing 
+pascal_triangle,403,409,403, -O2 -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing 
+path_sum,152,154,152, -O2 -fomit-frame-pointer -fno-strict-aliasing -finline-functions -funroll-loops -fno-math-errno 
+peak,153,153,153, -O3 
+permutation_in_string,154,154,181, 
+permutations,281,281,285, -O3 -fomit-frame-pointer -fno-strict-aliasing -fwrapv 
+plus_one,114,114,114, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fno-strict-aliasing 
+points_on_line,328,503,506, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer -fno-semantic-interposition 
+pow,131,136,136, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+priority_queue,492,498,433, -fomit-frame-pointer -funroll-loops -finline-functions -fstack-protector -fwrapv 
+pyramid_nums,320,320,320, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+pyramid_stars,104,104,103, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -ftree-slp-vectorize -fno-semantic-interposition -fno-strict-aliasing -fno-trapping-math -fno-builtin 
+quicksort,219,230,230, -O3 -fno-strict-aliasing 
+range_search,141,144,144, -O3 
+recover_bst,155,155,156, -O3 -O3 -fomit-frame-pointer -fno-strict-aliasing -fwrapv 
+rect_in_histogram,334,334,339, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fno-stack-protector -fno-semantic-interposition -fno-strict-aliasing -fno-omit-frame-pointer 
+regular_expression,137,140,142, -O3 -fomit-frame-pointer -funroll-loops -fstrict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing -fno-trapping-math -fno-math-errno -fno-rounding-math 
+remove_end,125,125,128, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-omit-frame-pointer 
+reorder_list,178,178,179, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer 
+reverse_bits,80,80,80, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+reverse_list,107,107,107, -O3 -O2 -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+reverse_nodes,120,120,125, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fwrapv -fno-strict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing -fno-omit-frame-pointer 
+rm_dup,176,181,183, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fstrict-aliasing -fwrapv 
+rm_dups,197,197,198, -O3 -fomit-frame-pointer -fstack-protector -fno-strict-aliasing -fwrapv 
+rm_elem,201,215,201, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-trapping-math 
+robber,172,172,170, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fwrapv 
+roman_numeral,81,81,81, -O3 -fwrapv -fno-strict-aliasing -fno-omit-frame-pointer -fomit-frame-pointer -fno-strict-aliasing 
+roman_to_integer,147,168,168, -O3 -fno-semantic-interposition 
+rotate,348,639,0, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fprofile-use -fstrict-aliasing -fprofile-use -fstrict-aliasing 
+rotate_array,172,172,172, -O3 
+rotate_list,238,238,238, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fmerge-all-constants -fno-strict-aliasing 
+rotated_array,126,126,193, -fomit-frame-pointer -funroll-loops -finline-functions 
+same_tree,78,78,78, -O3 -fomit-frame-pointer -fno-strict-aliasing 
+scramble_string,258,258,0, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fprofile-use -fstrict-aliasing 
+search_rotated_array,163,163,163, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer -O3 -fomit-frame-pointer 
+sheet_column,85,85,85, -O3 
+shortest_palindrome,220,220,221, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing -fno-omit-frame-pointer -fno-trapping-math -fno-semantic-interposition 
+simple,152,152,155, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-stack-protector -fno-omit-frame-pointer 
+simplify_path,235,238,235, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+simulator,917,917,941, -O3 -fno-strict-aliasing -fno-omit-frame-pointer 
+single_number,155,155,155, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-math-errno -fno-trapping-math 
+slide_window,254,254,254, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fmerge-all-constants -fno-stack-protector -O2 -fomit-frame-pointer 
+sort,237,237,237, -O2 -funroll-loops -fomit-frame-pointer -finline-functions 
+sort_colors,210,214,214, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fno-strict-aliasing 
+sort_list,191,194,194, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing 
+sort_search,283,283,283, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fstack-protector -fstack-protector 
+spiral_matrix,442,442,396, -O3 -fomit-frame-pointer -funroll-loops -fstrict-aliasing -fwrapv 
+sqrt,130,130,140, -O3 -fomit-frame-pointer -ffast-math -fno-math-errno -fno-trapping-math -ffinite-math-only -fno-rounding-math -fno-strict-aliasing -fmerge-all-constants -fno-omit-frame-pointer 
+stack,93,93,93, -O3 
+stock,168,168,168, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+strstr,80,80,80, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+subarray,144,144,149, -O3 -funroll-loops -fomit-frame-pointer -ffast-math 
+subsets,251,251,251, -O3 -funroll-loops -fmerge-all-constants 
+sudoku_solver,466,772,772, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+sum_tree,144,144,144, -O3 -funroll-loops -fmerge-all-constants -ftree-vectorize 
+surrounded_regions,800,800,800, -O3 -funroll-loops -fmerge-all-constants 
+swap_nodes,169,169,169, -O3 -funroll-loops -fmerge-all-constants 
+symmetric_tree,154,156,156, -O3 -funroll-loops -fmerge-all-constants 
+three_sum_closest,163,163,163, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+time_diff,149,149,167, 
+trap_water,151,151,151, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+triangle,268,268,268, -O3 -funroll-loops -fmerge-all-constants 
+trie,375,483,483, -O3 -funroll-loops -fmerge-all-constants 
+two_sum,220,221,221, -O3 -funroll-loops -fmerge-all-constants 
+unique_bst,310,329,329, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+unique_path,80,80,80, -O3 -funroll-loops -fmerge-all-constants 
+valid_bst,156,158,158, -O3 -funroll-loops 
+valid_number,143,149,149, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+valid_parentheses,127,134,134, -O3 -funroll-loops -fmerge-all-constants 
+wildcard_matching,210,210,210, -O3 -funroll-loops -fmerge-all-constants 
+window_substring,169,169,169, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+word_dict,391,675,675, -O3 -funroll-loops -fmerge-all-constants 
+word_length,112,113,113, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+zeroes,80,80,80, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+zigzag_conversion,86,86,86, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+add_binary,180,180,180, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing -fno-math-errno 
+add_complex,83,83,83, -O3 -fomit-frame-pointer 
+add_ints,71,71,71, -O2 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fstack-protector 
+add_two_numbers,594,594,600, -O3 -fomit-frame-pointer -fno-strict-aliasing -fno-stack-protector -fno-omit-frame-pointer 
+alexnet,1973,3717,1148, -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+add_binary,180, .000637959,180, .001085055,180, .000679008, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fno-strict-aliasing 
+add_complex,83, .001279235,83, .000736414,83, .000688986, -O3 -fstrict-aliasing -fno-strict-aliasing -fno-builtin 
+add_ints,71, .000708745,71, .000684563,71, .000693395, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fwrapv -fno-trapping-math -fno-math-errno -fno-signed-zeros 
+add_two_numbers,594, .000983751,594, .000619690,296, .000704805, -funroll-loops 
+alexnet,1973, .000904215,3717, .000782404,3739, .001077581, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin -fno-builtin 
+anagram,978, .000691639,1240, .000926845,1031, .000847965, -finline-functions -funroll-loops 
+anagrams,364, .000744169,366, .000757193,364, .001366789, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+anagrams_in_string,331, .000746331,331, .000874338,331, .001089112, -O3 -fomit-frame-pointer 
+and,89, .000630810,89, .001130832,94, .000668921, -O2 -fno-strict-aliasing -fno-omit-frame-pointer 
+assembler,684, .001162278,746, .000954597,746, .000696691, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-strict-aliasing -fno-strict-aliasing 
+atoi,186, .000642209,206, .000901138,206, .000749310, -O3 -fomit-frame-pointer -fstrict-aliasing 
+backtrack,178, .000802560,372, .000602585,390, .000705614, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing 
+balanced_bst,154, .000675478,154, .000706469,193, .000913005, 
+basic_malloc,418, .001279257,421, .001222951,421, .000933092, -O3 
+benchmark4,205, .001160118,307, .000833269,307, .000750678, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fwrapv 
+bfs,460, .000905764,466, .001263206,494, .001003990, -fomit-frame-pointer -funroll-loops -finline-functions -fomit-frame-pointer -funroll-loops -finline-functions -fomit-frame-pointer -funroll-loops -finline-functions 
+binary_search,162, .000598504,166, .001091432,166, .000816183, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -finline-functions -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -finline-functions -O3 
+binary_tree_build,376, .001384160,376, .000841100,376, .000810917, -O3 -funroll-loops -fomit-frame-pointer -finline-functions 
+bst_bfs,278, .000602116,281, .000740083,285, .000985670, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+bst_convert,164, .000650254,164, .000883802,168, .000807279, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+bst_depth,80, .000631736,80, .000837110,80, .000900285, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+bst_inorder_traversal,71, .000941958,71, .000656762,71, .000822990, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fomit-frame-pointer -fno-trapping-math -fno-strict-aliasing 
+bst_lca,108, .000613324,110, .000638156,188, .000729776, -fno-omit-frame-pointer 
+bst_max_path,175, .000757696,175, .000672618,222, .000847876, -fno-omit-frame-pointer -fno-strict-aliasing 
+bst_postorder,152, .000662906,159, .000711683,188, .001048652, -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing 
+bst_preorder,146, .000769045,150, .000739782,150, .000633013, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -O3 -funroll-loops -fomit-frame-pointer -finline-functions 
+bst_right,243, .000772565,243, .000716674,0, .000728148, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-omit-frame-pointer -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fno-omit-frame-pointer -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+bst_zigzag,288, .001082991,288, .000802955,414, .000750403, -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -finline-functions 
+calculator,236, .000747708,240, .000602036,235, .000698339, -O2 -fomit-frame-pointer -fstrict-aliasing -fwrapv 
+candy,272, .000804640,272, .000806615,280, .000797941, -O3 -fno-strict-aliasing -fno-omit-frame-pointer -fno-strict-aliasing -fno-trapping-math 
+climb_stairs,85, .000928259,85, .001044633,85, .000796825, -O2 -funroll-loops -fomit-frame-pointer 
+clone_graph,189, .000677792,189, .000759877,189, .000735913, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fomit-frame-pointer 
+coin_change,220, .000803386,274, .001255010,274, .000776223, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+combination_sum,320, .000733400,320, .001314867,323, .000829198, -O3 -O2 -O3 -fomit-frame-pointer -fno-strict-aliasing 
+combinations,304, .000809480,304, .000762659,303, .001313291, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fwrapv -fwrapv 
+common_prefix,128, .000763131,137, .000624139,137, .000654856, -O3 -O2 -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+consec_seq,260, .000806576,260, .000859238,257, .001095205, -O3 -fomit-frame-pointer -fno-strict-aliasing -fno-builtin -fno-strict-aliasing -fno-builtin 
+container,145, .000857213,145, .000632977,145, .000802114, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+copy_list,225, .000769301,225, .000659962,225, .000761664, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+count_and_say,215, .000698454,246, .000769289,214, .000841036, -funroll-loops -fomit-frame-pointer -fstrict-aliasing -finline-functions -fno-strict-aliasing -fno-trapping-math 
+course_schedule,184, .000679108,184, .000735400,189, .000755748, -O3 -fomit-frame-pointer -funroll-loops -ffast-math -O2 -fomit-frame-pointer -funroll-loops -O3 -fomit-frame-pointer -funroll-loops -ffast-math 
+decode_ways,89, .000669104,89, .000953628,193, .000805935, -ffast-math -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fno-omit-frame-pointer 
+dft,753, .000644944,756, .000566993,604, .000632582, 
+display_guts,105, .000973453,109, .000732695,114, .000688486, -O3 -fomit-frame-pointer -fno-strict-aliasing -fstack-protector-strong -fno-omit-frame-pointer 
+distinct_subseq,289, .000819822,303, .000806026,303, .000873532, -O3 -fomit-frame-pointer -fno-strict-aliasing 
+divide,160, .000605575,160, .000777615,160, .000743462, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing 
+dungeon,217, .000913903,217, .000797700,392, .000708658, 
+edit_distance,182, .001204940,80, .000941630,80, .000988003, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fno-strict-aliasing 
+equality_equations,228, .000794755,228, .000776822,228, .000790394, -O2 
+eval_rpn,190, .000849286,190, .001154948,193, .000947728, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-omit-frame-pointer 
+fc_forward,104, .000809137,105, .000839955,110, .000713665, -O3 -fomit-frame-pointer -funroll-loops -ffast-math -fno-strict-aliasing -fno-stack-protector 
+findmaximum,190, .000728386,191, .000705799,190, .000816907, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing 
+flatten,164, .000730756,164, .000713008,164, .001292347, -O3 -fomit-frame-pointer 
+four_sum,369, .000866458,372, .000752202,352, .000751932, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -O3 -fomit-frame-pointer 
+fraction,284, .000594122,284, .001071827,284, .001002809, -O3 -O3 -O3 
+full_pyramid_nums,149, .000653991,441, .000782515,441, .000858887, -O3 -funroll-loops -fomit-frame-pointer 
+full_pyramid_stars,122, .000969346,122, .000778216,122, .000706957, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fstrict-aliasing -fmerge-all-constants -fno-trapping-math -fno-signed-zeros 
+gas_station,80, .000912728,80, .000748658,80, .000564271, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fno-strict-aliasing -fno-trapping-math 
+graph,947, .000798579,1050, .000748449,952, .000693437, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fwrapv -O2 -fomit-frame-pointer -funroll-loops -finline-functions 
+gray_code,152, .000984344,152, .000674084,152, .000603751, -O2 -fomit-frame-pointer -funroll-loops -finline-functions 
+hamming_weight,80, .000743422,80, .000656170,105, .000715568, -fomit-frame-pointer -funroll-loops -finline-functions -fno-trapping-math -ffast-math -fno-signed-zeros 
+happy_number,118, .000599322,120, .000617920,125, .000645006, -O3 -Oz -Ofast -fomit-frame-pointer -funroll-loops -finline-functions -fno-builtin 
+hello,79, .000751525,79, .000645483,79, .000855256, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+insertion,285, .000902806,149, .000667345,285, .000855031, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fno-strict-aliasing 
+insertionsort,155, .000908568,155, .000734797,144, .000812603, -finline-functions -fomit-frame-pointer 
+interleaving_string,78, .000732730,78, .000745157,78, .000847486, -O2 
+intersection,131, .000601036,131, .000685248,192, .000733504, 
+invert_binary_tree,99, .000942329,99, .000954441,133, .000705021, 
+ip_addr,233, .000640345,283, .000775881,283, .000785882, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+isomorphic_strings,80, .000755494,80, .000627839,81, .000669730, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-omit-frame-pointer 
+jump_game,168, .000835628,168, .000778986,173, .001244052, -Ofast -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+justification,397, .000809858,488, .000821261,488, .001054984, -O3 -fomit-frame-pointer -fno-stack-protector -fno-strict-aliasing -fno-stack-protector 
+kth_bst,139, .000634439,141, .000742940,144, .000668222, -O2 -ffast-math -fomit-frame-pointer -funroll-loops -finline-functions 
+kth_elem,217, .000646610,217, .000784039,217, .000835342, -O3 -fomit-frame-pointer -fno-strict-aliasing 
+largest_number,217, .000785062,217, .001108691,242, .000872692, 
+lcs,249, .000669106,254, .000955322,254, .000932412, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants 
+lis,356, .001233319,364, .000743079,371, .000859993, -O3 -fno-strict-aliasing -fno-omit-frame-pointer 
+longest_substring_without_repeat,320, .001241253,439, .000760711,320, .000907884, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-trapping-math -fno-strict-aliasing 
+lps,180, .000788931,183, .000870779,183, .000661135, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+lru_cache,532, .000620315,781, .000945701,539, .000838708, -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fno-strict-aliasing -fno-trapping-math -fno-builtin 
+majority,85, .000675810,85, .000778955,85, .000915279, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fstrict-aliasing 
+matrix_mult_rec,244, .000687450,244, .000714744,244, .000648754, -O2 -O2 -fomit-frame-pointer -fno-strict-aliasing 
+max_gap,339, .000654594,343, .000839835,343, .001191922, -O3 -funroll-loops -fomit-frame-pointer -finline-functions 
+max_subarray,80, .000819851,80, .000761393,80, .001146947, -O3 -fomit-frame-pointer 
+median_of_two_sorted_array,100, .000669714,100, .000720099,100, .000723513, -O2 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-trapping-math 
+merge_intervals,303, .000842785,303, .000865108,365, .000786370, -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+merge_lists,125, .001247743,125, .001211562,149, .000696812, -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -freciprocal-math -fno-strict-aliasing 
+mergesort,314, .000884176,314, .001001284,324, .000795841, -O3 -fno-omit-frame-pointer -fno-omit-frame-pointer -fno-omit-frame-pointer 
+mini_size,149, .000659373,149, .000911404,149, .000973046, -O3 -fomit-frame-pointer -fno-strict-aliasing -finline-functions -funroll-loops -fno-math-errno -fno-trapping-math -fno-math-errno 
+minimum,146, .000806789,146, .000702041,154, .000718504, -funroll-loops -fomit-frame-pointer -fno-strict-aliasing 
+missing_positive,165, .000809377,165, .000784209,165, .001227689, -O2 
+mult_float,71, .000687618,71, .000691287,71, .000633873, -O2 
+multiply_strings,206, .000786519,275, .000681582,275, .000763015, -O3 -funroll-loops -fomit-frame-pointer -fmerge-all-constants 
+n_queens,456, .000814358,478, .000724404,456, .000866368, -O2 -fno-strict-aliasing 
+next_permutation,130, .000658610,130, .000754641,130, .000930110, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fno-strict-aliasing -fno-stack-protector -O2 -funroll-loops -finline-functions -fomit-frame-pointer -fno-strict-aliasing 
+outer_product,432, .000868393,432, .000825048,432, .001196117, -O2 
+palindrome_partition,365, .000888596,378, .000785104,413, .000740940, -fno-strict-aliasing -fwrapv -fomit-frame-pointer -fno-omit-frame-pointer -fno-omit-frame-pointer 
+parenthesis,179, .001039447,220, .000702457,226, .001094040, -O3 -fwrapv -fomit-frame-pointer -fno-omit-frame-pointer 
+pascal_triangle,403, .001255686,409, .000900314,409, .000763345, -O3 
+path_sum,152, .000623868,154, .001230918,154, .000716525, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fmerge-all-constants -fno-strict-aliasing -fno-trapping-math 
+peak,153, .000925333,153, .000628422,303271, .000930439, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -finline-functions -fno-strict-aliasing -fno-trapping-math -fno-signed-zeros -fsanitize=address -fsanitize=undefined 
+permutation_in_string,154, .000741824,154, .000643365,158, .001116019, -O3 -fno-semantic-interposition -fno-strict-aliasing -fno-omit-frame-pointer -fno-omit-frame-pointer -fno-strict-aliasing -fno-omit-frame-pointer 
+permutations,281, .000733539,281, .000635344,285, .000658267, -O3 -funroll-loops -fomit-frame-pointer -finline-functions -fno-strict-aliasing 
+plus_one,114, .000898332,114, .000955839,114, .000807630, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fstack-protector 
+points_on_line,328, .000636923,503, .000763961,503, .000989964, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing 
+pow,131, .000858237,136, .001273207,136, .000996566, -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fno-strict-aliasing -fno-trapping-math -fno-semantic-interposition -O3 -funroll-loops -fomit-frame-pointer -fstrict-aliasing 
+priority_queue,492, .000895390,498, .001162707,463, .000909992, 
+pyramid_nums,320, .000668022,320, .000829404,320, .001072765, -O2 
+pyramid_stars,104, .000833746,104, .000605613,104, .000816522, -O3 
+quicksort,219, .000859083,230, .000956091,230, .000784970, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -freciprocal-math -ftrapping-math -fassociative-math -fstack-protector 
+range_search,141, .000753063,144, .000603928,144, .000788419, -O3 -funroll-loops -fomit-frame-pointer -O2 -funroll-loops -fomit-frame-pointer -O3 -funroll-loops -fomit-frame-pointer 
+recover_bst,155, .000861008,155, .000885575,155, .000767674, -O3 
+rect_in_histogram,334, .000663393,334, .000920544,334, .000638038, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing 
+regular_expression,137, .000790839,140, .000937258,139, .000757310, -O2 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-omit-frame-pointer 
+remove_end,125, .000735830,125, .000646767,125, .001217570, -O3 -fomit-frame-pointer -funroll-loops -finline-functions 
+reorder_list,178, .000616593,178, .000642297,178, .000710374, -O3 -fomit-frame-pointer -fno-strict-aliasing 
+reverse_bits,80, .000703354,80, .000639116,0, .000572062, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fstrict-aliasing -fno-trapping-math -fwrapv -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fmerge-all-constants -fstrict-aliasing -fno-trapping-math -fwrapv 
+reverse_list,107, .000618697,107, .000692925,107, .001265745, -O3 
+reverse_nodes,120, .000629864,120, .001279639,120, .000764377, -O3 
+rm_dup,176, .000749080,181, .000641065,188, .000953838, -O3 -O2 -O1 -Os -Og -Ofast -fomit-frame-pointer -fno-omit-frame-pointer 
+rm_dups,197, .000680640,197, .000768216,198, .000875448, -O3 -fno-omit-frame-pointer -fno-strict-aliasing 
+rm_elem,201, .000876981,215, .000790299,201, .000893131, -O2 -funroll-loops -fomit-frame-pointer -fstrict-aliasing -fno-trapping-math -fno-math-errno -fno-signed-zeros 
+robber,172, .000745404,172, .000838952,172, .000987675, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -O2 -fomit-frame-pointer -funroll-loops -finline-functions -O3 -fomit-frame-pointer -funroll-loops -finline-functions -O2 -fomit-frame-pointer -funroll-loops -finline-functions 
+roman_numeral,81, .000816902,81, .000876152,272, .000702207, -funroll-loops 
+roman_to_integer,147, .001504747,168, .000863400,173, .000940561, -Ofast -fomit-frame-pointer -funroll-loops -finline-functions 
+rotate,348, .000627398,639, .000720512,286, .000993304, -fomit-frame-pointer -funroll-loops -ffast-math -fno-strict-aliasing 
+rotate_array,172, .001024456,172, .000746431,172, .000774821, -O3 -fstrict-aliasing -fno-signed-zeros -fno-trapping-math -fno-math-errno 
+rotate_list,238, .000691578,238, .000862361,206, .000635336, -fno-omit-frame-pointer -fno-strict-aliasing 
+rotated_array,126, .000663407,126, .000720055,126, .000681039, -O3 
+same_tree,78, .000800777,78, .000860906,78, .000614235, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing 
+scramble_string,258, .000724796,258, .000690590,258, .001100934, -O2 -funroll-loops -fomit-frame-pointer -fmerge-all-constants -fstrict-aliasing -fno-trapping-math -fno-signed-zeros -fno-strict-aliasing 
+search_rotated_array,163, .000711566,163, .000780145,169, .000757658, -O3 -fno-strict-aliasing -fwrapv -fno-omit-frame-pointer -fno-trapping-math 
+sheet_column,85, .000671485,85, .000636911,154, .000655407, -fomit-frame-pointer -funroll-loops -finline-functions -fno-strict-aliasing -fno-strict-aliasing 
+shortest_palindrome,220, .000822645,220, .000792051,220, .000776831, -O2 -fomit-frame-pointer -fno-strict-aliasing 
+simple,152, .000988038,152, .000683688,161, .000687649, -O3 -fstrict-aliasing -fstack-protector -fstack-protector-strong -fwrapv 
+simplify_path,235, .000693347,238, .000701684,238, .001124589, -O3 
+simulator,917, .000886115,917, .000927486,941, .000849475, -O3 -fno-strict-aliasing -fno-omit-frame-pointer 
+single_number,155, .000809777,155, .000580840,155, .000747536, -O3 -funroll-loops -fomit-frame-pointer -fno-strict-aliasing -fno-math-errno -fno-trapping-math 
+slide_window,254, .000580888,254, .000851309,254, .001315731, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fno-strict-aliasing -fmerge-all-constants -fno-stack-protector -O2 -fomit-frame-pointer 
+sort,237, .000700994,237, .000564507,237, .001088676, -O2 -funroll-loops -fomit-frame-pointer -finline-functions 
+sort_colors,210, .000601267,214, .000760952,214, .000739008, -O3 -funroll-loops -finline-functions -fomit-frame-pointer -fno-strict-aliasing 
+sort_list,191, .000639238,194, .000767937,194, .000681251, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing 
+sort_search,283, .000647292,283, .000969536,283, .000745115, -O3 -fomit-frame-pointer -funroll-loops -finline-functions -fstrict-aliasing -fstack-protector -fstack-protector 
+spiral_matrix,442, .000820739,442, .000772898,396, .000696376, -O3 -fomit-frame-pointer -funroll-loops -fstrict-aliasing -fwrapv 
+sqrt,130, .001231398,130, .000601991,140, .000709678, -O3 -fomit-frame-pointer -ffast-math -fno-math-errno -fno-trapping-math -ffinite-math-only -fno-rounding-math -fno-strict-aliasing -fmerge-all-constants -fno-omit-frame-pointer 
+stack,93, .000554466,93, .000769270,93, .000652304, -O3 
+stock,168, .000652470,168, .000800189,168, .000812765, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+strstr,80, .000764330,80, .000811541,80, .000716725, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+subarray,144, .000755374,144, .000777325,149, .001108702, -O3 -funroll-loops -fomit-frame-pointer -ffast-math 
+subsets,251, .001145475,251, .001154753,251, .000795176, -O3 -funroll-loops -fmerge-all-constants 
+sudoku_solver,466, .000627153,772, .000889092,772, .000803589, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+sum_tree,144, .000718464,144, .000711335,144, .000686023, -O3 -funroll-loops -fmerge-all-constants -ftree-vectorize 
+surrounded_regions,800, .000674403,800, .001286909,800, .001132647, -O3 -funroll-loops -fmerge-all-constants 
+swap_nodes,169, .000576428,169, .000853548,169, .001129910, -O3 -funroll-loops -fmerge-all-constants 
+symmetric_tree,154, .000649739,156, .000902534,156, .001165259, -O3 -funroll-loops -fmerge-all-constants 
+three_sum_closest,163, .000556949,163, .000717060,163, .000783289, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+time_diff,149, .000757665,149, .000855166,167, .000793748, 
+trap_water,151, .000589647,151, .000625675,151, .000772597, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+triangle,268, .000596083,268, .000790979,268, .000801975, -O3 -funroll-loops -fmerge-all-constants 
+trie,375, .000532684,483, .000717478,483, .000727712, -O3 -funroll-loops -fmerge-all-constants 
+two_sum,220, .001035340,221, .000929891,221, .000982862, -O3 -funroll-loops -fmerge-all-constants 
+unique_bst,310, .000642932,329, .000790958,329, .000964504, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+unique_path,80, .000551004,80, .000660015,80, .001005130, -O3 -funroll-loops -fmerge-all-constants 
+valid_bst,156, .000987416,158, .000768738,158, .000789384, -O3 -funroll-loops 
+valid_number,143, .000900938,149, .000892999,149, .000643940, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+valid_parentheses,127, .000624006,134, .000762416,134, .001349903, -O3 -funroll-loops -fmerge-all-constants 
+wildcard_matching,210, .000721293,210, .000794418,210, .000778919, -O3 -funroll-loops -fmerge-all-constants 
+window_substring,169, .000723540,169, .000857133,169, .000633986, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+word_dict,391, .000900388,675, .000729669,675, .000810726, -O3 -funroll-loops -fmerge-all-constants 
+word_length,112, .000599182,113, .000714174,113, .000833852, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+zeroes,80, .000672534,80, .000692271,80, .000766445, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
+zigzag_conversion,86, .000852854,86, .000747909,86, .000795175, -O3 -funroll-loops -fmerge-all-constants -fomit-frame-pointer 
